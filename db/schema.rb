@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170424155559) do
+ActiveRecord::Schema.define(version: 20170424180033) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "product_negotiations", force: :cascade do |t|
+    t.integer  "products_id"
+    t.integer  "users_id"
+    t.text     "single_bids", default: [],                array: true
+    t.boolean  "active",      default: true
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.index ["products_id"], name: "index_product_negotiations_on_products_id", using: :btree
+    t.index ["users_id"], name: "index_product_negotiations_on_users_id", using: :btree
+  end
 
   create_table "products", force: :cascade do |t|
     t.string   "title"
@@ -48,5 +59,7 @@ ActiveRecord::Schema.define(version: 20170424155559) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "product_negotiations", "products", column: "products_id"
+  add_foreign_key "product_negotiations", "users", column: "users_id"
   add_foreign_key "products", "users"
 end

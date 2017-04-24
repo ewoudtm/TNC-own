@@ -3,8 +3,8 @@ class CreateProductNegotiations < ActiveRecord::Migration[5.0]
     create_table :product_negotiations do |t|
       t.references :products, foreign_key: true
       t.references :users, foreign_key: true
-      t.array :single_bids
-      t.boolean :active
+      t.text :single_bids, array: true, default: []
+      t.boolean :active, default: true
 
       t.timestamps
     end

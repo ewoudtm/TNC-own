@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
   belongs_to :user
+  has_many :product_negotiations
 
   validates :title, presence: true, length: {maximum: 20}
   validates :start_price, presence: true

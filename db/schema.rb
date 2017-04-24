@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170424180033) do
+ActiveRecord::Schema.define(version: 20170424180035) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,16 @@ ActiveRecord::Schema.define(version: 20170424180033) do
     t.index ["user_id"], name: "index_products_on_user_id", using: :btree
   end
 
+  create_table "singlebids", force: :cascade do |t|
+    t.integer  "price"
+    t.boolean  "counter_offer"
+    t.boolean  "accepted",                default: false
+    t.integer  "product_negotiations_id"
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
+    t.index ["product_negotiations_id"], name: "index_singlebids_on_product_negotiations_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "first_name",             default: "", null: false
     t.string   "last_name",              default: "", null: false
@@ -62,4 +72,5 @@ ActiveRecord::Schema.define(version: 20170424180033) do
   add_foreign_key "product_negotiations", "products", column: "products_id"
   add_foreign_key "product_negotiations", "users", column: "users_id"
   add_foreign_key "products", "users"
+  add_foreign_key "singlebids", "product_negotiations", column: "product_negotiations_id"
 end

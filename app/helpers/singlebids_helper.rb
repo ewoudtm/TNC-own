@@ -1,0 +1,2 @@
+module SinglebidsHelper
+end

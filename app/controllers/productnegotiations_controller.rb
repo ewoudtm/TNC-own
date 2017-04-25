@@ -8,10 +8,7 @@ class ProductnegotiationsController < ApplicationController
   end
 
   def show
-
-
     @current_negotiation_bids = ProductNegotiation.get_bids_from_current_negotiation(@single_bids, params)
-
   end
 
   def new
@@ -40,11 +37,7 @@ class ProductnegotiationsController < ApplicationController
 
     def authorize_buyer_seller
       # if current_user id is equal to Product owner or Product bidder, ok to continue, otherwise not.
-      if (current_user.id == @product_negotiation.user.id) || (current_user.id == @product_negotiation.product.user_id)
-        return
-      else
-        redirect_to product_path, notice: "Sorry, this is not your negotiation"
-      end
+      redirect_to product_path, notice: "Sorry, you can't see other peoples negotiations" unless (current_user.id == @product_negotiation.user.id) || (current_user.id == @product_negotiation.product.user_id)
     end
 
 

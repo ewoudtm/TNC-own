@@ -4,3 +4,19 @@
 //
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10pt;
+  color: #333333;
+}
+
+a {
+  text-decoration: none !important;
+  color: #333333;
+}
+
+a:hover {
+    color: #ff0000;
+  }

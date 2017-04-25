@@ -5,7 +5,7 @@ RSpec.describe User, type: :model do
   let(:user1) { create :user }
   let(:user2) { create :user }
   let(:product1) { create :product, user: user1 }
-  let(:product_negotiation1) { create :product_negotiation, users_id: user2 }
+  let(:product_negotiation1) { create :product_negotiation, user: user2 }
 
 
 
@@ -16,11 +16,6 @@ RSpec.describe User, type: :model do
       end
     end
 
-    describe "user knows about product negotiation" do
-      it "knows the product negotiation he's in" do
-        expect(user2.product_negotiations).to include(product_negotiation1)
 
-      end
-    end
 
 end

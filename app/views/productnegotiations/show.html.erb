@@ -1,17 +1,20 @@
 <div class="panel panel-primary">
-  <div class="panel-heading">Negotiation Area</div>
+  <div class="panel-heading">NEGOTIATION AREA</div>
 
   <div class="panel-body">
 
+    <h2><%= @product_negotiation.product.title %></h1>
+    <%= image_tag @product_negotiation.product.image %>
+    <h4>Starting price: <%= @product_negotiation.product.start_price %></h2>
     <p>Negotiation Active: <%= @product_negotiation.active %></p>
 
-    <h2>Biedingen</h2>
+    <h2>Offers and Counter offers</h2>
 
     <table class="table table-striped">
       <thead>
         <tr>
-          <th>Datum</th>
-          <th>Bod</th>
+          <th>Date</th>
+          <th>Offer</th>
           <th>Counter offer</th>
         </tr>
       </thead>

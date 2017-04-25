@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :product_negotiation do
-    products nil
-    users nil
+    products "Products"
+    users "Users"
     single_bids ""
     active false
   end

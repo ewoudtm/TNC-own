@@ -5,8 +5,13 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :products do
-    resources :product_negotations
+    resources :product_negotiations
   end
+
   resources :productnegotiations, only: [:show]
+
+  resources :users do
+    resources :products
+  end
 
 end

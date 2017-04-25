@@ -1,6 +1,6 @@
 
 <div class="row">
-  <div class="col-xs-12" class="products-container">
+  <div class="col-xs-12 products-container">
     <% @products.each do |product| %>
       <div class="product-wrapper">
         <div class="product-image">
@@ -8,8 +8,9 @@
         </div>
         <div class="product-description">
           <h3><%= link_to product.title, product_path(product.id) %></h3>
-          <h4><%= link_to product.description, product_path(product.id)%></h4>
+          <h4><%= link_to product.product_type, product_path(product.id)%></h4>
           <%= product.size %>
+          <%= product.original_price %>
           <%= product.start_price %>
         </div>
       </div>

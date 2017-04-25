@@ -13,6 +13,11 @@ class ProductnegotiationsController < ApplicationController
 
   end
 
+  def new
+      @product_negotiation = ProductNegotiation.new
+  end
+
+
   def create
   end
 

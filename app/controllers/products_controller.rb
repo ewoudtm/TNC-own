@@ -3,10 +3,13 @@ class ProductsController < ApplicationController
   before_action :set_products
 
   def index
+    @products = Product.all
   end
 
-  def show
-  end
+    def show
+        @product = Product.find(params[:id])
+     end
+
 
   def create
   end

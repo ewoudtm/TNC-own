@@ -10,9 +10,12 @@
           <h2>price: <%= @product.start_price %></h2>
           <h4>size: <%= @product.size %></h4>
           <p>description: <%= @product.description %></p>
-          <h1><%= link_to "Place Bid" %></h2>
+          <%= link_to "Place Bid", "#myModal", :class => "btn btn-primary btn-lg", "data-toggle" => "modal" %>
             <!-- new_product_product_negotiation_path -->
+            <%= render '/shared/modal' %>
         </div>
+
+
       </div>
   </div>
 </div>

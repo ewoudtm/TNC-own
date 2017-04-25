@@ -1,8 +1,8 @@
 class ProductsController < ApplicationController
-  before_action :set_product
+  before_action :set_product, only: [:show, :update, :destroy] 
+  before_action :set_products
 
   def index
-    @products = Product.all
   end
 
   def show
@@ -21,6 +21,11 @@ class ProductsController < ApplicationController
   def set_product
     @product = Product.find(params[:id])
   end
+
+  def set_products
+      @products = Product.all
+    end
+
 
 
 end

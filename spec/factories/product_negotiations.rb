@@ -1,7 +1,8 @@
 FactoryGirl.define do
   factory :product_negotiation do
-    product_id 1
-    single_bids [1]
+    product { build (:product) }
+    single_bids { build (:single_bid) }
     active false
+    user { build (:user) }
   end
 end

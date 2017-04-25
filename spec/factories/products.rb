@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :product do
-    user "User"
+    user { build (:user) }
     title "MyString"
     start_price 1
     image "testimage.jpg"

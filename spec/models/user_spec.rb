@@ -16,11 +16,6 @@ RSpec.describe User, type: :model do
       end
     end
 
-    describe "user knows about product negotiation" do
-      it "knows the product negotiation he's in" do
-        expect(user2.product_negotiations).to include(product_negotiation1)
 
-      end
-    end
 
 end

@@ -1,6 +1,7 @@
 User.delete_all
 Product.delete_all
 ProductNegotiation.delete_all
+SingleBid.delete_all
 
 user1 = User.create!(
   first_name: "Angela",
@@ -68,29 +69,42 @@ product5 = Product.create(
   user_id: user1.id
 )
 
-# seed product_negotations
+# product_negotations
 product_negotiation1 = ProductNegotiation.create!(
   single_bids: [],
   active: true,
   product_id: product1,
   user_id: user2.id
 )
+product_negotiation2 = ProductNegotiation.create!(
+  single_bids: [],
+  active: true,
+  product_id: product1,
+  user_id: user2.id
+)
 
+# single bids
 single_bid1 = SingleBid.create!(
-  product_negotiation_id: 1,
+  product_negotiation_id: product_negotiation1.id,
   price: 22,
   counter_offer: false,
-  accepted: false,
+  accepted: false
 )
 single_bid2 = SingleBid.create!(
-  product_negotiation_id: 1,
+  product_negotiation_id: product_negotiation1.id,
   price: 24,
   counter_offer: true,
-  accepted: false,
+  accepted: false
 )
 single_bid3 = SingleBid.create!(
-  product_negotiation_id: 1,
+  product_negotiation_id: product_negotiation1.id,
   price: 23,
   counter_offer: false,
-  accepted: false,
+  accepted: false
+)
+single_bid4 = SingleBid.create!(
+  product_negotiation_id: product_negotiation2.id,
+  price: 50,
+  counter_offer: false,
+  accepted: false
 )

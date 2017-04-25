@@ -7,8 +7,10 @@ class ProductnegotiationsController < ApplicationController
   end
 
   def show
+    
 
-    #@product_negotiation_bids = find_bids(@single_bids)
+    @current_negotiation_bids = ProductNegotiation.get_bids_from_current_negotiation(@single_bids, params)
+
   end
 
   def create
@@ -30,9 +32,5 @@ class ProductnegotiationsController < ApplicationController
       @single_bids = SingleBid.all
     end
 
-    def find_bids
-
-      # return single_bids.find(params[:product_negotiation_id])
-    end
 
 end

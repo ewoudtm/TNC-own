@@ -5,6 +5,26 @@
 
     <p>Negotiation Active: <%= @product_negotiation.active %></p>
 
+    <h2>Biedingen</h2>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Datum</th>
+          <th>Bod</th>
+          <th>Counter offer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @current_negotiation_bids.each do |bid| %>
+          <tr>
+            <td><%= bid.created_at %></td>
+            <td><%= bid.price %></td>
+            <td><%= bid.counter_offer %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
   </div>
 

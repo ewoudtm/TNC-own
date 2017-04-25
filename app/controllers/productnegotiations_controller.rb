@@ -6,6 +6,11 @@ class ProductnegotiationsController < ApplicationController
   def show
   end
 
+  def new
+      @product_negotiation = ProductNegotiation.new
+  end
+
+
   def create
   end
 

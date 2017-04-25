@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :set_product, only: [:show, :update, :destroy]
+  before_action :set_products
 
   def index
   end
@@ -14,5 +16,16 @@ class ProductsController < ApplicationController
 
   def destroy
   end
+
+  private
+  def set_product
+    @product = Product.find(params[:id])
+  end
+
+  def set_products
+      @products = Product.all
+    end
+
+
 
 end

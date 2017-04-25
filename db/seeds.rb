@@ -1,5 +1,6 @@
 User.delete_all
 Product.delete_all
+ProductNegotiation.delete_all
 
 user1 = User.create!(
   first_name: "Angela",
@@ -28,7 +29,7 @@ product1 = Product.create(
   condition: "Kleine gebruikssporen",
   description: "Gedragen maar kan zeer zeker nog mooie rondes mee",
   size: "M",
-  user_id: user1
+  user_id: user1.id
 )
 product2 = Product.create(
   title: "Jimmy Choo Pumps",
@@ -37,7 +38,7 @@ product2 = Product.create(
   condition: "Nieuw",
   description: "Prachtige nieuw in doos Jimmy Choo Aude Cubed Nitro leather pump in zilver kleur. Gekocht voor een gelegenheid maar niet gebruikt daarvoor. Een keer gepast en binnen even op gelopen maar daarna altijd in de kast blijven staan. Prachtige pump klassiek en tijdloos en zeer edgy en trendy nu voor een geweldige prijs.",
   size: "39",
-  user_id: user1
+  user_id: user1.id
 )
 product3 = Product.create(
   title: "Bellerose Jas",
@@ -46,7 +47,7 @@ product3 = Product.create(
   condition: "Kleine gebruikssporen",
   description: "Lekker Bellrose jasje, met dunne warme voering.",
   size: "S",
-  user_id: user2
+  user_id: user2.id
 )
 product4 = Product.create(
   title: "Swarovski Zonnebril",
@@ -55,7 +56,7 @@ product4 = Product.create(
   condition: "Zo goed als nieuw",
   description: "collectors item zonnebril van Swarovski. beperkte oplage.Deze zonnebril heeft rond de 1200 euro gekost. De zijkant zitten de mooie Swarovski stenen",
   size: "One size fits all",
-  user_id: user2
+  user_id: user2.id
 )
 product5 = Product.create(
   title: "Coach Schoudertas",
@@ -64,5 +65,32 @@ product5 = Product.create(
   condition: "Binnenvoering heeft kleine rafel",
   description: "Royale tas van Coach. Met mooie details en 3 ruime vakken, dubbele handgrepen en of verwijderbare schouderriempjes. Het is gemaakt van kiezelleer met een suede interieur. Afm 26x31x14cm.",
   size: "30 bij 40 cm",
-  user_id: user1
+  user_id: user1.id
+)
+
+# seed product_negotations
+product_negotiation1 = ProductNegotiation.create!(
+  single_bids: [],
+  active: true,
+  product_id: product1,
+  user_id: user2.id
+)
+
+single_bid1 = SingleBid.create!(
+  product_negotiation_id: 1,
+  price: 22,
+  counter_offer: false,
+  accepted: false,
+)
+single_bid2 = SingleBid.create!(
+  product_negotiation_id: 1,
+  price: 24,
+  counter_offer: true,
+  accepted: false,
+)
+single_bid3 = SingleBid.create!(
+  product_negotiation_id: 1,
+  price: 23,
+  counter_offer: false,
+  accepted: false,
 )

@@ -1,18 +1,17 @@
 
 <div class="row">
   <div class="col-xs-12" class="products-container">
-    <% @products.each do |product| %>
+      <h1><%= @product.title %></h1>
       <div class="product-wrapper">
         <div class="product-image">
-          <%= image_tag product.image %>
+          <%= image_tag @product.image %>
         </div>
         <div class="product-description">
-          <h3><%= link_to product.title, product_path(product.id) %></h3>
-          <h4><%= link_to product.description, product_path(product.id)%></h4>
-          <%= product.size %>
-          <%= product.start_price %>
+          <h2>price: <%= @product.start_price %></h2>
+          <h4>size: <%= @product.size %></h4>
+          <p>description: <%= @product.description %></p>
+
         </div>
       </div>
-    <% end %>
   </div>
 </div>

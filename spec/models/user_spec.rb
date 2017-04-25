@@ -10,7 +10,7 @@ RSpec.describe User, type: :model do
 
 
     describe "user knows about products" do
-      it "knows the product he's in" do
+      it "knows the product he owns" do
         expect(user1.products).to include(product1)
 
       end

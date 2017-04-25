@@ -1,16 +1,18 @@
 
+
 <div class="row">
   <div class="col-xs-12" class="products-container">
-    <h2>Welcome: <%= @current_user.first_name %></h2>
-
-    <% @current_user.products.each do |product| %>
+    <h1> Welcome: <%= current_user.first_name %></h1>
+    <hr>
+    <% current_user.products.each do |product| %>
       <div class="product-wrapper">
         <div class="product-image">
+
           <%= image_tag product.image %>
         </div>
         <div class="product-description">
-          <h3><%= link_to product.title, product_path(product.id) %></h3>
-          <h3><%= product.start_price %> </h3>
+          <h2><%= product.title %></h2>
+          <h3> Price: <%= product.start_price %> </h3>
         </div>
       </div>
     <% end %>

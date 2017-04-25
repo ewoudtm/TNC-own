@@ -7,5 +7,10 @@ Rails.application.routes.draw do
   resources :products do
     resources :product_negotations
   end
-  
+
+  resources :users do
+    resources :products
+  end
+
+
 end

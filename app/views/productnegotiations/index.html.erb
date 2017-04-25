@@ -1,0 +1,19 @@
+
+
+<div class="row">
+  <div class="col-xs-12" class="products-container">
+    <h1> Welcome: <%= current_user.first_name %></h1>
+    <hr>
+    <% current_user.product_negotiations.each do |product| %>
+      <div class="product-wrapper">
+        <div class="product-image">
+
+          <%= product_negotiation.product.title %>
+        </div>
+        <div class="product-description">
+          <h2><%= product_negotiation.product.start_price %></h2>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

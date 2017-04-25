@@ -8,4 +8,9 @@ Rails.application.routes.draw do
     resources :product_negotations
   end
 
+
+  resources :users do
+    resources :products
+  end
+
 end

@@ -11,4 +11,8 @@ class ProductNegotiation < ApplicationRecord
 
     return select_bids
   end
+
+  def self.setup_profile
+    debugger
+  end
 end

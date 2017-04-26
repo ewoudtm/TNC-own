@@ -26,10 +26,10 @@
         <% @current_negotiation_bids.each do |bid| %>
           <tr>
             <td><%= bid.created_at %></td>
-            <td><%= bid.counter_offer == true ? "Buyer counter offer sent" : "Seller offer sent" %></td>
+            <td><%= bid.user_id == current_user.id ? "Buyer offer sent" : "Seller offer sent" %></td>
             <td>€ <%= bid.price %>,00</td>
             <td> <%= link_to "Accept", productnegotiation_path(@product_negotiation.id), class: "btn btn-danger btn-md", method: :patch %></td>
-            <td> <% if bid.counter_offer == false %> <%= text_field :post, :title, size: 20 %> <%= link_to "Counter", :class => "btn btn-danger btn-md" %> <% else %> Counter offer placed </td>
+            <td> <% if bid.user_id == current_user.id %> <%= text_field :post, :title, size: 20 %> <%= link_to "Counter", :class => "btn btn-danger btn-md" %> <% else %> Counter offer placed </td>
               <% end %>
             <td> <%= link_to "Decline", productnegotiation_path(@product_negotiation.id), class: "btn btn-danger btn-md", method: :patch %></td>
           </tr>

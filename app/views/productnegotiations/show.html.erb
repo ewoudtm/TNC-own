@@ -26,10 +26,11 @@
             <td><%= bid.counter_offer == true ? "Buyer counter offer sent" : "Seller offer sent" %></td>
             <td>€ <%= bid.price %>,00</td>
             <td> <%= link_to "Accept", :class => "btn btn-danger btn-md" %> </td>
-            <td> <%= bid.counter_offer == true ? (link_to "Counter", :class => "btn btn-danger btn-md") : "Counter offer placed" %> </td>
+            <td> <% if bid.counter_offer == true %> <%= text_field :post, :title, size: 20 %> <%= link_to "Counter", :class => "btn btn-danger btn-md" %> <% else %> Counter offer placed </td>
             <td> <%= link_to "Decline", :class => "btn btn-danger btn-md" %> </td>
           </tr>
         <% end %>
+          <% end %>
       </tbody>
     </table>
 

@@ -1,10 +1,11 @@
 class ProductnegotiationsController < ApplicationController
   before_action :set_product_negotiation, only: [:show]
-  before_action :set_single_bids, only: [:show, :index]
+  before_action :set_single_bids, only: [:show]
 
 
   def index
-
+    # @current_negotiation_bids = ProductNegotiation.get_bids_from_current_negotiation(@single_bids, params)
+    # debugger
   end
 
   def show

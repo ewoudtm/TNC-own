@@ -1,8 +1,8 @@
 class ProductnegotiationsController < ApplicationController
   before_action :set_product_negotiation, only: [:show]
+  before_action :set_single_bids, only: [:show]
   before_action :authorize_buyer_seller, only: [:show]
-  before_action :set_single_bids, only: [:show, :index]
-
+  before_action :get_product_negotiations, only: [:new]
 
 
   def index
@@ -10,12 +10,13 @@ class ProductnegotiationsController < ApplicationController
 
   def show
     @current_negotiation_bids = ProductNegotiation.get_bids_from_current_negotiation(@single_bids, params)
+
   end
 
   def new
-      @product_negotiation = ProductNegotiation.new
+    redirect_if_negotiation_already_exists
+    # @product_negotiation = ProductNegotiation.new     SHOULD BE IN CREATE?
   end
-
 
   def create
   end
@@ -41,5 +42,15 @@ class ProductnegotiationsController < ApplicationController
       redirect_to product_path, notice: "Sorry, you can't see other peoples negotiations" unless (current_user.id == @product_negotiation.user.id) || (current_user.id == @product_negotiation.product.user_id)
     end
 
+    def get_product_negotiations
+      @product_negotiations = ProductNegotiation.all
+    end
 
+    def redirect_if_negotiation_already_exists
+      # redirect to negotiation if Buyer already has a negotiation for this product
+      found_negotiation = current_user.product_negotiations.find do |negotiation|
+        negotiation.product_id == params[:format].to_i
+      end
+      redirect_to productnegotiation_path(found_negotiation.id), notice: "You already have a negotiation for this product" unless found_negotiation == nil
+    end
 end

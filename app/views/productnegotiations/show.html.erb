@@ -25,6 +25,9 @@
             <td><%= bid.created_at %></td>
             <td><%= bid.counter_offer == true ? "Seller offer sent" : "Buyer offer sent" %></td>
             <td>€ <%= bid.price %>,00</td>
+            <td> <%= link_to "Accept", :class => "btn btn-danger btn-md" %> </td>
+            <td> <%= link_to "Counter", :class => "btn btn-danger btn-md" %> </td>
+            <td> <%= link_to "Decline", :class => "btn btn-danger btn-md" %> </td>
           </tr>
         <% end %>
       </tbody>

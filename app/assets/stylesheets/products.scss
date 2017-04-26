@@ -9,6 +9,15 @@ img {
     width: auto\9; /* ie8 */
 }
 
+del {
+  color: #BBB;
+}
+
+.btn {
+  border-radius: 0 !important;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
 
 .products-container {
   max-width: 1400px;
@@ -23,12 +32,29 @@ img {
 
 .product-wrapper {
   width: 25%;
-  text-align: center;
-  margin-bottom: 10px;
+  text-align: left;
+  margin: 0 auto 40px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .product-image {
 }
 
-.product-description {
+.product-description-wrapper {
+  padding: 15px 10px 40px 10px;
+  border-bottom: 1.6px dotted black;
+  border-bottom-width: 0.08em;
+}
+
+.product-show-top {
+  border-bottom: 1.6px dotted black;
+  border-bottom-width: 0.08em;
+}
+.product-show-icons{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }

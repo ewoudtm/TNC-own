@@ -173,14 +173,14 @@ product13 = Product.create(
 product_negotiation1 = ProductNegotiation.create!(
   single_bids: [],
   active: true,
-  product_id: product1,
+  product_id: product1.id,
   user_id: user2.id
 )
 product_negotiation2 = ProductNegotiation.create!(
   single_bids: [],
   active: true,
-  product_id: product1,
-  user_id: user2.id
+  product_id: product2.id,
+  user_id: user1.id
 )
 
 

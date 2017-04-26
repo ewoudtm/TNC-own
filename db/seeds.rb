@@ -33,7 +33,8 @@ product1 = Product.create(
   condition: "Kleine gebruikssporen",
   description: "Givenchy 'TRIA' boots. Maar 3x gedragen. Aangekocht februari 2016 In de Bijenkorf in Amsterdam. Originele prijs €1315,00.\nMateriaal: Suede\nKleur: Beige",
   size: "38",
-  user_id: user1.id
+  user_id: user1.id,
+  accept_offers: true
 )
 product2 = Product.create(
   title: "PATRIZIA PEPE",
@@ -44,7 +45,8 @@ product2 = Product.create(
   condition: "Topconditie",
   description: "Grijs/Taupe kleur Poncho van Patrizia Pepe. Maat 1, denk dat dit overeenkomt met maat 36, maar ook geschikt voor een maat groter of kleiner. Kan zo gedragen worden of bijvoorbeeld over een leren jasje. Met grote kol.\nGebruikte materialen: Acryl, Alpaca, wol.",
   size: "36",
-  user_id: user2.id
+  user_id: user2.id,
+  accept_offers: true
 )
 product3 = Product.create(
   title: "ILJA VISSER",
@@ -55,7 +57,8 @@ product3 = Product.create(
   condition: "Nieuw",
   description: "Prachtige exclusieve witte nieuwe blouse van de modeontwerpster ILJA VISSER\nMaat 36\nZijde\nNieuw met kaartje 199",
   size: "36",
-  user_id: user1.id
+  user_id: user1.id,
+  accept_offers: true
 )
 product4 = Product.create(
   title: "STILLS",
@@ -66,7 +69,8 @@ product4 = Product.create(
   condition: "Nieuw",
   description: "Prachtige mooie nieuwe jurk van STILLS in maat 36\nDonker mais geel afgezet met een bruin randje\nGevoerd\nNieuw met kaartje 299",
   size: "36",
-  user_id: user1.id
+  user_id: user1.id,
+  accept_offers: true
 )
 product5 = Product.create(
   title: "PRADA",
@@ -77,7 +81,8 @@ product5 = Product.create(
   condition: "1x gedragen",
   description: "Prada shopper van zeer soepel maar stevig leer. Nieuw.\nMateriaal: Leer\nKleur: Blauw ",
   size: "",
-  user_id: user2.id
+  user_id: user2.id,
+  accept_offers: true
 )
 product6 = Product.create(
   title: "CHRISTIAN LOUBOUTIN",
@@ -88,7 +93,8 @@ product6 = Product.create(
   condition: "Nieuw",
   description: "Christian Louboutin enkellaarsjes 'Fastwist 140' in bruin suede. Met 140mm behoorlijk hoog, maar er zit ruim 2 cm platform in waardoor ze toch minder hoog voelen.\nVallen naar maat (zijn mij met mijn maat 39 dus helaas te groot).\nNieuw en ongedragen inclusief originele doos.\nMateriaal: Suede \nKleur: Bruin ",
   size: "40",
-  user_id: user3.id
+  user_id: user3.id,
+  accept_offers: true
 )
 product7 = Product.create(
   title: "ASH",
@@ -99,7 +105,8 @@ product7 = Product.create(
   condition: "",
   description: "Stoere, trendy sneakers in kaki camouflage print van het hippe merk ASH. Ze lopen heerlijk en zijn helemaal hot. De witte neus is opzettelijk enigszins oud gemaakt, lijkt langs de randen wat 'groezelig', maar zo zijn ze gemaakt, zaten zo in de doos, ze zijn slechts een paar keer gedragen en zien er, afgezien van wat gebruikssporen op de zolen, perfect uit. Een aanrader. De maat is 37. Neem een kijkje in mijn boutique, bijna dagelijks nieuwe items van top merken.",
   size: "37",
-  user_id: user1.id
+  user_id: user1.id,
+  accept_offers: true
 )
 product8 = Product.create(
   title: "CITIZENS OF HUMANITY",
@@ -110,7 +117,8 @@ product8 = Product.create(
   condition: "Topconditie",
   description: "Prachtige jeans van Citizens of Humanity, Avedon. Maat 28. Met 2% elastan voor de perfecte pasvorm.\nMateriaal: Denim\nKleur: Blauw ",
   size: "28",
-  user_id: user3.id
+  user_id: user3.id,
+  accept_offers: false
 )
 product9 = Product.create(
   title: "LOUIS VUITTON",
@@ -121,7 +129,8 @@ product9 = Product.create(
   condition: "Topconditie",
   description: "Mooie zomerlaarsjes in leder van Louis Vuitton\nHakhoogte : 12 cm \nHoogte van de laars : 30 cm \nHak in hout en sluiting met rits aan de achterzijde\nMateriaal: Leer \nKleur: Beige ",
   size: "39",
-  user_id: user1.id
+  user_id: user1.id,
+  accept_offers: false
 )
 product10 = Product.create(
   title: "TWIN-SET",
@@ -132,7 +141,8 @@ product10 = Product.create(
   condition: "",
   description: "Mooie gehaakte tuniek van Twin Set met langere ondertop met verstelbare bandjes. Een paar maal gedragen.\nMateriaal: Katoen\nKleur: Beige ",
   size: "36",
-  user_id: user2.id
+  user_id: user2.id,
+  accept_offers: false
 )
 product11 = Product.create(
   title: "IRO",
@@ -143,7 +153,8 @@ product11 = Product.create(
   condition: "Topconditie",
   description: "IRO's Hoover Jacket. Black jacket with leather sleeves | Assymetric zipper flap front | Zip pockets | Leather trim at hems. 52% Cotton | 44% Linen | 3% Polyamide, 1% Elastane. Dry Clean. Mt 3\nMateriaal: Katoen \nKleur: Zwart ",
   size: "38",
-  user_id: user3.id
+  user_id: user3.id,
+  accept_offers: false
 )
 product12 = Product.create(
   title: "NIKE",
@@ -154,7 +165,8 @@ product12 = Product.create(
   condition: "Topconditie",
   description: "Nike internationalist schoenen in hele goede conditie, slechts paar keer gedragen. De schoenen zijn deels van suede, deels mesh-achtig materiaal (want het zijn sneakers). Maat valt echt als 36,5 (US 6; UK 3.,5; EUR 36,5; cm 23). Inclusief doos.\nMateriaal: Suede \nKleur: Blauw",
   size: "36,5",
-  user_id: user1.id
+  user_id: user1.id,
+  accept_offers: false
 )
 product13 = Product.create(
   title: "ARMANI",
@@ -165,7 +177,8 @@ product13 = Product.create(
   condition: "Topconditie",
   description: "Mooie Armani jeans, laag model. Weinig gedragen. Te klein gekocht.\nMateriaal: Katoen \nKleur: Blauw ",
   size: "36",
-  user_id: user1.id
+  user_id: user1.id,
+  accept_offers: false
 )
 
 

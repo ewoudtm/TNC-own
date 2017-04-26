@@ -4,6 +4,7 @@ class ProductnegotiationsController < ApplicationController
   before_action :authorize_buyer_seller, only: [:show]
   before_action :get_product_negotiations, only: [:new]
 
+
   def index
   end
 

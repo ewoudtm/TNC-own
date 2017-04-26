@@ -6,6 +6,7 @@ class ProductnegotiationsController < ApplicationController
 
 
   def index
+    @product_negotiation = ProductNegotiation.all
   end
 
   def show
@@ -28,6 +29,10 @@ class ProductnegotiationsController < ApplicationController
   end
 
   def update
+    @productnegotiation = ProductNegotiation.find(params[:id])
+    @productnegotiation.update_attribute(:active, false)
+      redirect_to productnegotions_path, notice: "Negotiation closed"
+  
   end
 
   def destroy
@@ -51,6 +56,7 @@ class ProductnegotiationsController < ApplicationController
     def get_product_negotiations
       @product_negotiations = ProductNegotiation.all
     end
+
 
     def redirect_if_negotiation_already_exists
       # redirect to negotiation if Buyer already has a negotiation for this product

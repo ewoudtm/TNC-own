@@ -1,2 +1,41 @@
 
-<%= render 'shared/product_negotiation' %>
+  <div class="panel-body">
+
+    <h2><%= @product_negotiation.product.title %></h1>
+    <%= image_tag @product_negotiation.product.image %>
+    <h4>Starting price: € <%= @product_negotiation.product.start_price %>,00</h2>
+    <p>Negotiation state: <%= @product_negotiation.active == true ? "Active" : "Inactive" %></p>
+
+    <h2>Offers and Counter offers</h2>
+    <hr>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Status</th>
+          <th>Price</th>
+          <th>Accept</th>
+          <th>Counter</th>
+          <th>Decline</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @current_negotiation_bids.each do |bid| %>
+          <tr>
+            <td><%= bid.created_at %></td>
+            <td><%= bid.user_id == current_user.id ? "Buyer offer sent" : "Seller offer sent" %></td>
+            <td>€ <%= bid.price %>,00</td>
+            <td> <%= link_to "Accept", productnegotiation_path(@product_negotiation.id), class: "btn btn-danger btn-md", method: :patch %></td>
+            <td> <% if bid.user_id == current_user.id %> <%= text_field :post, :title, size: 20 %> <%= link_to "Counter", :class => "btn btn-danger btn-md" %> <% else %> Counter offer placed </td>
+              <% end %>
+            <td> <%= link_to "Decline", productnegotiation_path(@product_negotiation.id), class: "btn btn-danger btn-md", method: :patch %></td>
+          </tr>
+            <% end %>
+      </tbody>
+    </table>
+
+  </div>
+
+
+

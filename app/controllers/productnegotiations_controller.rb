@@ -6,6 +6,7 @@ class ProductnegotiationsController < ApplicationController
 
 
   def index
+    @product_negotiation = ProductNegotiation.all
   end
 
   def show
@@ -21,12 +22,10 @@ class ProductnegotiationsController < ApplicationController
   end
 
   def update
-    @productnegotiation = Productnegotiation.find(params[:id])
-    if @productnegotiation.update_attributes(user_params)
-      redirect_to productnegotions_path, notice: "Negotiation closed"
-    else
-      redirect_to 'pages#home'
-    end
+    @productnegotiation = ProductNegotiation.find(params[:id])
+    @productnegotiation.update_attribute(:active, false)
+      # redirect_to productnegotions_path, notice: "Negotiation closed"
+
   end
 
   def destroy
@@ -46,6 +45,7 @@ class ProductnegotiationsController < ApplicationController
       # if current_user id is equal to Product owner or Product bidder, ok to continue, otherwise not.
       redirect_to product_path, notice: "Sorry, you can't see other peoples negotiations" unless (current_user.id == @product_negotiation.user.id) || (current_user.id == @product_negotiation.product.user_id)
     end
+
 
 
 end

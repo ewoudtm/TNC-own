@@ -21,6 +21,12 @@ class ProductnegotiationsController < ApplicationController
   end
 
   def update
+    @productnegotiation = Productnegotiation.find(params[:id])
+    if @productnegotiation.update_attributes(user_params)
+      redirect_to productnegotions_path, notice: "Negotiation closed"
+    else
+      redirect_to 'pages#home'
+    end
   end
 
   def destroy

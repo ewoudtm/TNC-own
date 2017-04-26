@@ -4,6 +4,7 @@ class ProductnegotiationsController < ApplicationController
   before_action :set_single_bids, only: [:show, :index]
 
 
+
   def index
   end
 

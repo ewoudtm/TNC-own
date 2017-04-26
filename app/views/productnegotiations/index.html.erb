@@ -14,9 +14,7 @@
         </div>
         <div class="product-description">
           <h2>Starting Price:</h2> <h3> <%= product_negotiation.product.start_price %> </h3>
-
-
-          <h2>Current Bid:</h2>
+          <h2>Current Bid:</h2> <h3><%= product_negotiation.single_bids.last.price %> </h3>
         </div>
       </div>
     <% end %>

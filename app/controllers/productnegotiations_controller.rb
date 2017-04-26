@@ -4,8 +4,7 @@ class ProductnegotiationsController < ApplicationController
 
 
   def index
-    # @current_negotiation_bids = ProductNegotiation.get_bids_from_current_negotiation(@single_bids, params)
-    # debugger
+
   end
 
   def show

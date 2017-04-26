@@ -1,6 +1,7 @@
 class SinglebidsController < ApplicationController
 
   def index
+    @singlebids = Singlebid.all
   end
 
   def show

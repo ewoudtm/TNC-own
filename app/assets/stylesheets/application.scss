@@ -10,6 +10,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-size: 10pt;
   color: #333333;
+  padding-top: 70px;
 }
 
 a {
@@ -18,5 +19,45 @@ a {
 }
 
 a:hover {
-    color: #ff0000;
+    color: #FF0000;
   }
+
+.navbar-top {
+  background-color: #000;
+  color: #FFF;
+  width: 100%;
+}
+.navbar-bottom {
+  background-color: #FFF;
+  color: #333;
+  width: 100%;
+  padding-top:10px;
+}
+
+.logo {
+  height: 18px;
+  width: 196px;
+  padding-top: 17px;
+  padding-left: 0px;
+}
+
+.nav-user {
+  color: #FFF;
+  a:hover {
+    background-color: #000;
+    text-decoration-color: #000;
+  }
+}
+
+div.navbar-header {
+  ul {
+    li {
+      display: inline;
+      padding: 10px;
+    }
+  }
+}
+
+del {
+   padding-right: 10px;
+}

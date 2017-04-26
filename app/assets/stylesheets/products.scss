@@ -13,6 +13,12 @@ del {
   color: #BBB;
 }
 
+.btn {
+  border-radius: 0 !important;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
 .products-container {
   max-width: 1400px;
   margin: 40px auto 0 auto;
@@ -39,4 +45,16 @@ del {
   padding: 15px 10px 40px 10px;
   border-bottom: 1.6px dotted black;
   border-bottom-width: 0.08em;
+}
+
+.product-show-top {
+  border-bottom: 1.6px dotted black;
+  border-bottom-width: 0.08em;
+}
+.product-show-icons{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }

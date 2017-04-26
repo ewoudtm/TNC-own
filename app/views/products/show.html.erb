@@ -1,21 +1,33 @@
 
 <div class="row">
-  <div class="col-xs-12" class="products-container">
-      <h1><%= @product.title %></h1>
-      <div class="product-wrapper">
-        <div class="product-image">
-          <%= image_tag @product.image %>
-        </div>
-        <div class="product-description">
-          <h2>price: <%= @product.start_price %></h2>
-          <h4>size: <%= @product.size %></h4>
-          <p>description: <%= @product.description %></p>
-          <%= link_to "Place Bid", "#myModal", :class => "btn btn-primary btn-lg", "data-toggle" => "modal" %>
-            <!-- new_product_product_negotiation_path -->
-            <%= render '/shared/modal' %>
-        </div>
+  <div class="col-xs-6">
+    <div class="product-image">
+      <%= image_tag @product.image %>
+    </div>
+  </div>
+  <div class="col-xs-6">
+    <div class="product-show-top">
+      <h4><%= @product.title %></h4>
+      <h5><%= @product.product_type %></h5>
+      <ul class="product-show-icons">
+        <li><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>sinds 20-4</li>
+        <li><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>115x bekeken</li>
+        <li><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>4x op verlanglijstje</li>
+        <li><span class="glyphicon glyphicon-hand-up" aria-hidden="true"></span>2x op geboden</li>
+      </ul>
+    </div>
+    <div class="row">
+      <div class="col-xs-8">
+        <h5><del>€<%= @product.original_price %></del></h5><h4>€<%= @product.start_price %></h4>
+        <%= link_to "IN SHOPPING BAG", product_path(@product.id), :class => "btn btn-danger btn-md" %>
+        <%= link_to "DOE EEN BOD", "#myModal", :class => "btn btn-danger btn-md", "data-toggle" => "modal" %>
+        <h6>MAAT: <%= @product.size %></h6>
+        <h6>OMSCHRIJVING</h6>
+        <p><%= @product.description %></p>
+      <div>
+    <div>
 
-
-      </div>
+    <!-- new_product_product_negotiation_path -->
+    <%= render '/shared/modal' %>
   </div>
 </div>

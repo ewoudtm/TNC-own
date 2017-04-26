@@ -16,7 +16,7 @@
         <div class="product-description-wrapper">
           <h3><%= product.title %></h3>
           <h4> Price: <%= product.start_price %> </h4>
-          <div class="pull-right"><h4>TEST</h4></div>
+          <div class="pull-right"><h4><%= link_to product_path(product.id), method: :update do %><%= product.accept_offers %><% end %></h4></div>
         </div>
       </div>
     <% end %>

@@ -207,24 +207,20 @@ product_negotiation3 = ProductNegotiation.create!(
 single_bid1 = SingleBid.create!(
   product_negotiation_id: product_negotiation1.id,
   price: 22,
-  counter_offer: false,
   accepted: false
 )
 single_bid2 = SingleBid.create!(
   product_negotiation_id: product_negotiation1.id,
   price: 24,
-  counter_offer: true,
   accepted: false
 )
 single_bid3 = SingleBid.create!(
   product_negotiation_id: product_negotiation1.id,
   price: 23,
-  counter_offer: false,
   accepted: false
 )
 single_bid4 = SingleBid.create!(
   product_negotiation_id: product_negotiation2.id,
   price: 50,
-  counter_offer: false,
   accepted: false
 )

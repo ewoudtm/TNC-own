@@ -46,12 +46,10 @@ class ProductnegotiationsController < ApplicationController
     end
 
     def redirect_if_negotiation_already_exists
-      # redirect_to product_negotiation_path, notice: "You already have a negotiation for this product" if
+      # redirect to negotiation if Buyer already has a negotiation for this product
       found_negotiation = current_user.product_negotiations.find do |negotiation|
         negotiation.product_id == params[:format].to_i
       end
-      
       redirect_to productnegotiation_path(found_negotiation.id), notice: "You already have a negotiation for this product" unless found_negotiation == nil
-
     end
 end

@@ -9,15 +9,20 @@
     <h2>Offers and Counter offers</h2>
     <hr>
 
+
+    <%= link_to "Decline", productnegotiation_path(@product_negotiation.id), class: "btn btn-danger btn-md", method: :patch %>
+    <%= link_to "Accept", productnegotiation_path(@product_negotiation.id), class: "btn btn-danger btn-md", method: :patch %>
+
+    <%= text_field(:single_bid, :price) %> <%= link_to "Counter Offer", new_productnegotiation_singlebid_path(@product_negotiation.id), class: "btn btn-primary", method: :create %>
+
+
+
     <table class="table table-striped">
       <thead>
         <tr>
           <th>Date</th>
           <th>Status</th>
           <th>Price</th>
-          <th>Accept</th>
-          <th>Counter</th>
-          <th>Decline</th>
         </tr>
       </thead>
       <tbody>
@@ -26,16 +31,9 @@
             <td><%= bid.created_at %></td>
             <td><%= bid.user_id == current_user.id ? "Buyer offer sent" : "Seller offer sent" %></td>
             <td>€ <%= bid.price %>,00</td>
-            <td> <%= link_to "Accept", productnegotiation_path(@product_negotiation.id), class: "btn btn-danger btn-md", method: :patch %></td>
-            <td> <% if bid.user_id == current_user.id %> <%= text_field :post, :title, size: 20 %> <%= link_to "Counter", :class => "btn btn-danger btn-md" %> <% else %> Counter offer placed </td>
-              <% end %>
-            <td> <%= link_to "Decline", productnegotiation_path(@product_negotiation.id), class: "btn btn-danger btn-md", method: :patch %></td>
           </tr>
             <% end %>
       </tbody>
     </table>
 
   </div>
-
-
-

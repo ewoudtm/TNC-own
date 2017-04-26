@@ -1,7 +1,7 @@
 class ProductnegotiationsController < ApplicationController
   before_action :set_product_negotiation, only: [:show]
-  before_action :set_single_bids, only: [:show]
   before_action :authorize_buyer_seller, only: [:show]
+  before_action :set_single_bids, only: [:show, :index]
 
 
   def index

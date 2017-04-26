@@ -17,10 +17,6 @@ class ProductsController < ApplicationController
   def update
   end
 
-  def update_accept_offers
-    debugger
-  end
-
   def destroy
   end
 

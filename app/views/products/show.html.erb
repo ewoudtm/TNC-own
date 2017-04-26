@@ -20,7 +20,7 @@
       <div class="col-xs-8">
         <h5><del>€<%= @product.original_price %></del></h5><h4>€<%= @product.start_price %></h4>
         <%= link_to "IN SHOPPING BAG", product_path(@product.id), :class => "btn btn-danger btn-md" %>
-        <%= link_to "DOE EEN BOD", "#myModal", :class => "btn btn-danger btn-md", "data-toggle" => "modal" %>
+        <%= link_to "DOE EEN BOD", new_productnegotiation_path, :class => "btn btn-danger btn-md", "data-toggle" => "modal" %>
         <h6>MAAT: <%= @product.size %></h6>
         <h6>OMSCHRIJVING</h6>
         <p><%= @product.description %></p>

@@ -1,7 +1,7 @@
 class ProductnegotiationsController < ApplicationController
   before_action :set_product_negotiation, only: [:show]
+  before_action :set_single_bids, only: [:show]
   before_action :authorize_buyer_seller, only: [:show]
-  before_action :set_single_bids, only: [:show, :index]
 
 
   def index
@@ -9,12 +9,12 @@ class ProductnegotiationsController < ApplicationController
 
   def show
     @current_negotiation_bids = ProductNegotiation.get_bids_from_current_negotiation(@single_bids, params)
+
   end
 
   def new
       @product_negotiation = ProductNegotiation.new
   end
-
 
   def create
   end

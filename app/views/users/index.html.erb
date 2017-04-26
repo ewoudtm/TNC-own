@@ -1,18 +1,19 @@
 
 
 <div class="row">
-  <div class="col-xs-12" class="products-container">
+  <div class="col-xs-12" "products-container">
     <h1> Welcome: <%= current_user.first_name %></h1>
     <hr>
     <h2> These are your products for sale: </h2>
-
+  </div>
+  <div class="col-xs-12 products-container">
     <% current_user.products.each do |product| %>
       <div class="product-wrapper">
         <div class="product-image">
 
           <%= image_tag product.image %>
         </div>
-        <div class="product-description">
+        <div class="product-description-wrapper">
           <h2><%= product.title %></h2>
           <h3> Price: <%= product.start_price %> </h3>
         </div>

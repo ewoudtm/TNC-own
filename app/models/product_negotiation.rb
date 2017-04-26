@@ -11,9 +11,4 @@ class ProductNegotiation < ApplicationRecord
 
     return select_bids
   end
-
-  # def self.is_buyer_already_seller(current_user, product)
-  #   debugger
-  # end
-
 end

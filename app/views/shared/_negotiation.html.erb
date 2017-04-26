@@ -1,0 +1,42 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">Negotiation Area</div>
+
+  <div class="panel-body">
+
+
+
+    <h2>Biedingen</h2>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Active</th>
+          <th>User</th>
+          <th>Product</th>
+          <th>Bids</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @current_negotiations.each do |negotiation| %>
+          <tr>
+            <td><%= negotiation.active %></td>
+            <td><%= negotiation.user.first_name %></td>
+            <td><%= negotiation.product.title %></td>
+            <td><% negotiation.single_bids.each do |bid| %>
+
+
+                <td><%= bid.price %></td>
+
+
+
+            <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>

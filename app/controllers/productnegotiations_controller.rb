@@ -15,6 +15,10 @@ class ProductnegotiationsController < ApplicationController
 
   def new
     redirect_if_negotiation_already_exists
+    debugger
+    @product_negotiation = ProductNegotiation.new
+    debugger
+    @profile_negotiation.setup_profile
     # @product_negotiation = ProductNegotiation.new     SHOULD BE IN CREATE?
   end
 

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :product_negotiations
   end
 
-  resources :productnegotiations, only: [:show, :index, :new]
+  resources :productnegotiations, only: [:show, :index, :new, :create]
 
   resources :users do
     resources :products

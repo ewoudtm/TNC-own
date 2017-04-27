@@ -1,8 +1,9 @@
 class SinglebidsController < ApplicationController
 
   def index
-    singlebids_index = SingleBid.all
-    @singlebids = singlebids_index.group_by(&:created_at)
+
+    @singlebids = SingleBid.all
+
   end
 
   def show
@@ -20,6 +21,10 @@ class SinglebidsController < ApplicationController
   end
 
   def update
+    @singlebid = SingleBid.find(params[:id])
+    if @singlebid.update_attribute(:accepted, true)
+      @singlebid.save
+    end
   end
 
   def destroy

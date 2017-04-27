@@ -9,14 +9,18 @@ Rails.application.routes.draw do
   end
 
 
+
   resources :singlebids
+
 
   resources :productnegotiations do
     resources :singlebids
   end
 
   resources :users do
-    resources :products
+    resources :products do
+      get :toggle_accept_offer
+    end
   end
 
 end

@@ -24,7 +24,7 @@
           This is your product
         <% else %>
           <%= link_to "IN SHOPPING BAG", product_path(@product.id), :class => "btn btn-danger btn-md" %>
-          <%= link_to "DOE EEN BOD", new_productnegotiation_path(@product), :class => "btn btn-danger btn-md", "data-toggle" => "modal" %> 
+          <%= link_to "DOE EEN BOD", new_productnegotiation_path(@product), :class => "btn btn-danger btn-md", "data-toggle" => "modal" %>
         <% end %>
         <hr>
         <h6>MAAT: <%= @product.size %></h6>
@@ -33,7 +33,5 @@
       <div>
     <div>
 
-    <!-- new_product_product_negotiation_path -->
-    <%= render '/shared/modal' %>
   </div>
 </div>

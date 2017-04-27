@@ -15,7 +15,17 @@ class SinglebidsController < ApplicationController
   end
 
   def create
-    SingleBid.createSingleBid(:price, :product_negotiation_id)
+    # create_singlebid = SingleBid.createSingleBid(:price, :product_negotiation_id)
+    # create_singlebid.save
+
+
+
+    pn_singlebid = SingleBid.new
+    pn_singlebid.update_attributes(product_negotiation_id: params[:product_negotiation_id], price: params[:price], user_id: current_user.id)
+    pn_singlebid.save
+
+    
+
   end
 
   def update

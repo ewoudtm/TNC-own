@@ -13,9 +13,9 @@
     <%= link_to "Decline", productnegotiation_path(@product_negotiation.id), class: "btn btn-danger btn-md", method: :patch %>
     <%= link_to "Accept", productnegotiation_path(@product_negotiation.id), class: "btn btn-danger btn-md", method: :patch %>
 
-    <%= singlebidinput = text_field(:price, size: 20) %>
+    <%= singlebidinput = number_field_tag(:price) %>
     <%= link_to "Counter Offer", singlebids_path(product_negotiation_id: @product_negotiation.id, price: singlebidinput), class: "btn btn-primary", method: :create %>
-
+  
 
 
     <table class="table table-striped">

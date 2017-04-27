@@ -1,3 +1,85 @@
-// Place all the styles related to the productnegotiations controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+*, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; margin: 0; padding: 0;}
+
+.bottom-spacer {
+  margin-bottom: 30px;
+}
+
+.current-bid {
+  line-height: 60px;
+}
+
+.wrapper {
+  font-family: sans-serif;
+  padding-left: 5%;
+}
+
+.callouts {
+  list-style-type: none;
+}
+
+/* BASE STYLES FOR EACH */
+.callouts {
+
+  /* Real styles */
+  position: relative;
+	height: 70px;
+  padding: 10px;
+  margin: 0px 15px 30px 15px;
+	background-color: #fff;
+  border: 1px solid #c1c1c1;
+	border-radius: 4px;
+
+  h3 {
+    line-height: 10px;
+  }
+
+}
+
+/* LEFT */
+.callouts--left:before {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: -42px;
+	top: 18px;
+  border: 10px solid transparent;
+  border-right: 32px solid rgba(193,193,193,0.5);
+  z-index: 2;
+}
+.callouts--left:after {
+  content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: -33px;
+	top: 20px;
+  border: 8px solid transparent;
+  border-right: 26px solid #fff;
+  z-index: 3;
+}
+
+/* RIGHT */
+.callouts--right:before {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	right: -42px;
+	top: 17px;
+  border: 10px solid transparent;
+  border-left: 32px solid rgb(193,193,193); /* IE8 Fallback */
+  border-left: 32px solid rgba(193,193,193,0.5);
+  z-index: 2;
+}
+.callouts--right:after {
+  content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	right: -34px;
+	top: 19px;
+  border: 8px solid transparent;
+  border-left: 26px solid #fff;
+  z-index: 3;
+}

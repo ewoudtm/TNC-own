@@ -2,10 +2,10 @@
   <div class="panel-heading">NEGOTIATION AREA</div>
 
   <div class="panel-body">
-  
-    <h2><%= @product_negotiation.product.title %></h1>
+    test 2
+    <h2><%= @product_negotiation.product.title %></h2>
     <%= image_tag @product_negotiation.product.image %>
-    <h4>Starting price: € <%= @product_negotiation.product.start_price %>,00</h2>
+    <h4>Starting price: € <%= @product_negotiation.product.start_price %>,00</h4>
     <p>Negotiation state: <%= @product_negotiation.active == true ? "Active" : "Inactive" %></p>
 
     <h2>Offers and Counter offers</h2>
@@ -20,13 +20,16 @@
         </tr>
       </thead>
       <tbody>
-        <% @product_negotiation.single_bids.each do |bid| %>
-          <tr>
-            <td><%= bid.created_at %></td>
-            <td><%= bid.counter_offer == true ? "Seller offer sent" : "Buyer offer sent" %></td>
-            <td>€ <%= bid.price %>,00</td>
-          </tr>
-        <% end %>
+        <!-- <% @product_negotiation.single_bids.each do |bid| %>
+          <% if bid != nil %>
+            <% user_id = bid.user_id %>
+            <% user = @users.select{|user| user[:id] == user_id} %>
+            <tr>
+              <td><%= bid.created_at %></td>
+              <td><%= user.first_name %> sent offer</td>
+              <td>€ <%= bid.price %></td>
+            </tr>
+        <% end %> -->
       </tbody>
     </table>
 

@@ -13,9 +13,12 @@
     <%= link_to "Decline", productnegotiation_path(@product_negotiation.id), class: "btn btn-danger btn-md", method: :patch %>
     <%= link_to "Accept", productnegotiation_path(@product_negotiation.id), class: "btn btn-danger btn-md", method: :patch %>
 
-    <%= singlebidinput = number_field_tag(:price) %>
-    <%= link_to "Counter Offer", singlebids_path(product_negotiation_id: @product_negotiation.id, price: singlebidinput), class: "btn btn-primary", method: :create %>
-  
+    <%= form_tag productnegotiation_singlebids_path(@product_negotiation.id) do %>
+      <label for="price">Counter Offer</label>
+      <%= text_field_tag :price %>
+      <%= submit_tag "Submit", class: "btn btn-md" %>
+      <% end %>
+
 
 
     <table class="table table-striped">

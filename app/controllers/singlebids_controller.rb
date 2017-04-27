@@ -1,8 +1,8 @@
 class SinglebidsController < ApplicationController
 
   def index
-    @singlebids = SingleBid.all
-    @singlebid = SingleBid.new
+    singlebids_index = SingleBid.all
+    @singlebids = singlebids_index.group_by(&:created_at)
   end
 
   def show
@@ -15,7 +15,7 @@ class SinglebidsController < ApplicationController
   end
 
   def create
-    @singlebid = SingleBid.new
+    SingleBid.createSingleBid(params[:price])
   end
 
   def update

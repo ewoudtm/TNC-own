@@ -17,13 +17,8 @@ class ProductnegotiationsController < ApplicationController
 
   def new
     redirect_if_negotiation_already_exists
-
-    if (@already_redirected == false)
-      product_negotiation = ProductNegotiation.new
-      product_negotiation.update_attributes(product_id: params[:format], user_id: current_user.id)
-      product_negotiation.save
-      redirect_to productnegotiation_path(product_negotiation.id), notice: "Succesfully created a new negotiation"
-    end
+    redirect_if_product_accept_offer_is_false unless @already_redirected == true
+    create_new_negotiation_and_redirect unless @already_redirected == true
   end
 
   def create
@@ -33,9 +28,7 @@ class ProductnegotiationsController < ApplicationController
     @productnegotiation = ProductNegotiation.find(params[:id])
     @productnegotiation.update_attribute(:active, false)
 
-      redirect_to productnegotiations_path, notice: "Negotiation closed"
-
-
+    redirect_to productnegotiations_path, notice: "Negotiation closed"
   end
 
   def destroy
@@ -60,7 +53,6 @@ class ProductnegotiationsController < ApplicationController
       @product_negotiations = ProductNegotiation.all
     end
 
-
     def redirect_if_negotiation_already_exists
       # redirect to negotiation if Buyer already has a negotiation for this product
       @already_redirected = false
@@ -69,6 +61,21 @@ class ProductnegotiationsController < ApplicationController
       end
       redirect_to productnegotiation_path(found_negotiation.id), notice: "You already have a negotiation for this product" unless found_negotiation == nil
       @already_redirected = true unless found_negotiation == nil
+    end
+
+    def redirect_if_product_accept_offer_is_false
+      product_id = params[:format].to_i
+      if (Product.find(product_id).accept_offers === false)
+        redirect_to product_path(product_id), notice: "Sorry, the seller has set this product as not available for new biddings"
+        @already_redirected = true
+      end
+    end
+
+    def create_new_negotiation_and_redirect
+      product_negotiation = ProductNegotiation.new
+      product_negotiation.update_attributes(product_id: params[:format], user_id: current_user.id)
+      product_negotiation.save
+      redirect_to productnegotiation_path(product_negotiation.id), notice: "Succesfully created a new negotiation"
     end
 
     def buyer_and_seller

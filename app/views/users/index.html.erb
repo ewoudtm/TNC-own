@@ -21,7 +21,11 @@
           <% else %>
             <%= link_to user_product_toggle_accept_offer_path(current_user.id, product.id), :class => "btn btn-danger btn-md", "data-toggle" => "modal", method: :put do %>Unavailable for offers<% end %>
           <%end%>
+          <% if product.product_negotiations.first != nil && product.product_negotiations.first.single_bids.first != nil %>
+          <%= link_to 'Current Offers', productnegotiation_path(product.product_negotiations.first.id), :class => "btn btn-success btn-md" %>
+          <% end %>
         </div>
+
       </div>
     <% end %>
   </div>

@@ -4,6 +4,7 @@ class ProductnegotiationsController < ApplicationController
   before_action :authorize_buyer_seller, only: [:show]
   before_action :get_product_negotiations, only: [:new]
   before_action :buyer_and_seller,  only: [:show]
+  before_action :end_time, only: [:show]
 
   def index
     @product_negotiation = ProductNegotiation.all
@@ -73,5 +74,11 @@ class ProductnegotiationsController < ApplicationController
     def buyer_and_seller
       @buyer = User.find(@product_negotiation.user.id)
       @seller = User.find(@product_negotiation.product.user_id)
+    end
+
+    def end_time
+      current_negotiation_bids = ProductNegotiation.get_bids_from_current_negotiation(@single_bids, params)
+      last_bid = current_negotiation_bids.last
+      @end_time = last_bid.created_at + 2.days
     end
 end

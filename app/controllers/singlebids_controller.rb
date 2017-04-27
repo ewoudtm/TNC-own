@@ -12,9 +12,9 @@ class SinglebidsController < ApplicationController
 
   def update
     @singlebid = SingleBid.find(params[:id])
-    @singlebid.update_attribute(:accepted, true)
-      # Correct path TBD, for now redirected to root
-      redirect_to root_path, notice: "Offer Accepted"
+    if @singlebid.update_attribute(:accepted, true)
+      @singlebid.save
+    end
   end
 
   def destroy

@@ -17,9 +17,9 @@
           <h3><%= product.title %></h3>
           <h4> Price: <%= product.start_price %> </h4>
           <% if product.accept_offers %>
-            <%= link_to product_path(product.id), :class => "btn btn-success btn-md", "data-toggle" => "modal", method: :update do %>Available for offers<% end %>
+            <%= link_to user_product_toggle_accept_offer_path(current_user.id, product.id), :class => "btn btn-success btn-md", "data-toggle" => "modal", method: :put do %>Available for offers<% end %>
           <% else %>
-            <%= link_to product_path(product.id), :class => "btn btn-danger btn-md", "data-toggle" => "modal", method: :update do %>Unavailable for offers<% end %>
+            <%= link_to user_product_toggle_accept_offer_path(current_user.id, product.id), :class => "btn btn-danger btn-md", "data-toggle" => "modal", method: :put do %>Unavailable for offers<% end %>
           <%end%>
         </div>
       </div>

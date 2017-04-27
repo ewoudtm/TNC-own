@@ -8,10 +8,12 @@ Rails.application.routes.draw do
     resources :product_negotiations
   end
 
-  resources :productnegotiations 
+  resources :productnegotiations
 
   resources :users do
-    resources :products
+    resources :products do
+      get :toggle_accept_offer
+    end
   end
 
 end

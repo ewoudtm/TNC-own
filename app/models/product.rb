@@ -7,4 +7,8 @@ class Product < ApplicationRecord
   validates :image, presence: true
   validates :description, presence: true, length: {maximum: 500}
   validates :size, presence: true
+
+  def self.toggle_accept_offer_attribute
+    debugger
+  end
 end

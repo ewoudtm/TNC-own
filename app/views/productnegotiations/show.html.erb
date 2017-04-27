@@ -1,3 +1,4 @@
+<% time_remaining = (@end_time - Time.now).to_i %>
 
 <div class="row bottom-spacer">
   <div class="col-xs-8">
@@ -26,14 +27,18 @@
     </div>
   </div>
 </div>
+<% time_remaining = (@end_time - Time.now).to_i %>
 
-<% if !!!@product_negotiation.active %>
+<% if !!!@product_negotiation.active || time_remaining <= 0 %>
  <h3>This negotiation is closed</h3>
 <% else %>
   <div class="row current-bid bottom-spacer">
     <% if @current_negotiation_bids.length != 0 %>
       <div class="col-xs-3">
-        <div><h3>Last Offer: €<%= @current_negotiation_bids.last.price %></h3></div>
+        <div>
+          <h3>Last Offer: €<%= @current_negotiation_bids.last.price %></h3>
+          <h5>Time remaining: <%= time_remaining/3600 %>hr : <%= time_remaining / 60 % 60 %>min : <%= time_remaining % 60 %>sec</h5>
+          </div>
       </div>
 
       <div class="col-xs-1">

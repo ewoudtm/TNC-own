@@ -8,7 +8,7 @@
       <% current_user.product_negotiations.each do |product_negotiation| %>
         <div class="product-wrapper">
           <div class="product-image">
-            <%= link_to image_tag(product_negotiation.product.image), productnegotiation_path(product_negotiation.product.id)  %>
+            <%= link_to image_tag(product_negotiation.product.image), productnegotiation_path(product_negotiation.id)  %>
           </div>
           <div class="product-description">
             <h3><%= product_negotiation.product.title %></h3>

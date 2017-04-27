@@ -43,7 +43,9 @@
 
       <div class="col-xs-1">
         <% if current_user == @product_negotiation.product.user %>
-        <%= link_to "Finalize", product_path(@product_negotiation.product.id, sold: true), class: "btn btn-danger btn-md", method: :patch %>
+          <% if @current_negotiation_bids.last.accepted == true %>
+            <%= link_to "Finalize", product_path(@product_negotiation.product.id, sold: true), class: "btn btn-danger btn-md", method: :patch %>
+          <% end %>
         <% end %>
       </div>
       <div class="col-xs-2">

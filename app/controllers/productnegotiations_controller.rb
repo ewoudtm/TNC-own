@@ -31,7 +31,9 @@ class ProductnegotiationsController < ApplicationController
   def update
     @productnegotiation = ProductNegotiation.find(params[:id])
     @productnegotiation.update_attribute(:active, false)
-      redirect_to productnegotions_path, notice: "Negotiation closed"
+
+      redirect_to productnegotiations_path, notice: "Negotiation closed"
+
 
   end
 

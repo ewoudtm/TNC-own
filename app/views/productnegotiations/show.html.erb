@@ -1,3 +1,4 @@
+
 <div class="row bottom-spacer">
   <div class="col-xs-8">
     <div class="product-show-top">
@@ -42,6 +43,13 @@
         <%= link_to "Finalize", product_path(@product_negotiation.product.id, sold: true), class: "btn btn-danger btn-md", method: :patch %>
         <% end %>
       </div>
+      <div class="col-xs-1">
+        <%= form_tag productnegotiation_singlebids_path(@product_negotiation.id) do %>
+        <label for="price">Counter Offer</label>
+        <%= text_field_tag :price %>
+        <%= submit_tag "Submit", class: "btn btn-md" %>
+        <% end %>
+      </div>   
       <div class="col-xs-2">
         <%= link_to "Cancel Negotiation", productnegotiation_path(@product_negotiation.id), class: "btn btn-danger btn-md", method: :patch %>
       </div>
@@ -103,3 +111,4 @@
     </div>
   <% end %>
 <% end %>
+

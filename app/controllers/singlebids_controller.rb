@@ -1,7 +1,7 @@
 class SinglebidsController < ApplicationController
 
   def index
-    @singlebids = Singlebid.all
+    @singlebids = SingleBid.all
   end
 
   def show
@@ -11,6 +11,10 @@ class SinglebidsController < ApplicationController
   end
 
   def update
+    @singlebid = SingleBid.find(params[:id])
+    @singlebid.update_attribute(:accepted, true)
+      # Correct path TBD, for now redirected to root
+      redirect_to root_path, notice: "Offer Accepted"
   end
 
   def destroy

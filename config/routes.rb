@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     resources :product_negotiations
   end
 
-  resources :productnegotiations
+  resources :productnegotiations do
+    resources :singlebids
+  end
 
   resources :users do
     resources :products do

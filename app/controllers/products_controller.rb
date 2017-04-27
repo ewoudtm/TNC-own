@@ -17,6 +17,11 @@ class ProductsController < ApplicationController
   def update
   end
 
+  def toggle_accept_offer
+    product = Product.find(params[:product_id].to_i)
+    change_accept_offer_boolean(product)
+  end
+
   def destroy
   end
 
@@ -33,6 +38,13 @@ class ProductsController < ApplicationController
       @product_negotiation = @product.product_negotiations.find do |pn|
       pn.user_id == current_user.id
     end
+  end
+
+  def change_accept_offer_boolean(product)
+    new_state = !product.accept_offers
+    product.update_attributes(accept_offers: new_state)
+    product.save
+    redirect_to users_path
   end
 
 end

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
 
 
+  resources :singlebids
 
   resources :productnegotiations do
     resources :singlebids

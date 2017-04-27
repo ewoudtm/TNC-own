@@ -15,7 +15,7 @@ class SinglebidsController < ApplicationController
   end
 
   def create
-    SingleBid.createSingleBid(params[:price])
+    SingleBid.createSingleBid(:price, :product_negotiation_id)
   end
 
   def update

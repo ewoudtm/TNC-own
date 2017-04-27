@@ -1,19 +1,22 @@
-
-
 <div class="row">
   <div class="col-xs-12" class="products-container">
-    <h1> <%= current_user.first_name %>'s current negotiations</h1>
+    <h1> Welcome: <%= current_user.first_name %></h1>
     <hr>
+    <h2> For these products you have started a negotiation: </h2>
     <div class="col-xs-12 products-container">
       <% current_user.product_negotiations.each do |product_negotiation| %>
         <div class="product-wrapper">
           <div class="product-image">
-            <%= link_to image_tag(product_negotiation.product.image), productnegotiation_path(product_negotiation.product.id)  %>
+            <%= link_to image_tag(product_negotiation.product.image), productnegotiation_path(product_negotiation.id)  %>
           </div>
           <div class="product-description">
             <h3><%= product_negotiation.product.title %></h3>
             <h4>Starting Price: <%= product_negotiation.product.start_price %></h4>
-            <h4>Current Bid: SHOW-LAST-BID... </h4>
+            <% if product_negotiation.single_bids.last != nil %>
+              <h4>Last bid: <%= product_negotiation.single_bids.last.price %> </h4>
+            <% else %>
+              <h4>No bidding done so far</h4>
+            <% end %>
           </div>
         </div>
       <% end %>

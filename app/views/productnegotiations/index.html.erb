@@ -4,19 +4,21 @@
   <div class="col-xs-12" class="products-container">
     <h1> <%= current_user.first_name %>'s current bids</h1>
     <hr>
-    <% current_user.product_negotiations.each do |product_negotiation| %>
+    <div class="col-xs-12 products-container">
+      <% current_user.product_negotiations.each do |product_negotiation| %>
 
-      <div class="product-wrapper">
-        <div class="product-image">
+        <div class="product-wrapper">
+          <div class="product-image">
 
-          <h1><%= product_negotiation.product.title %></h1>
-          <%= image_tag product_negotiation.product.image %>
+            <h1><%= product_negotiation.product.title %></h1>
+            <%= image_tag product_negotiation.product.image %>
+          </div>
+          <div class="product-description">
+            <h2>Starting Price:</h2> <h3> <%= product_negotiation.product.start_price %> </h3>
+            <h2>Current Bid:</h2> <h3> NEED TO SHOW LAST BID PRICE HERE IF POSSIBLE... </h3>
+          </div>
         </div>
-        <div class="product-description">
-          <h2>Starting Price:</h2> <h3> <%= product_negotiation.product.start_price %> </h3>
-          <h2>Current Bid:</h2> <h3> NEED TO SHOW LAST BID PRICE HERE IF POSSIBLE... </h3>
-        </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

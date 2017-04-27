@@ -92,7 +92,7 @@
         </div>
         <div class="col-xs-1" style="text-align: center;">
           <img src="https://thenextcloset.com/assets/icons/default_user/thumb_default_profile-54c8835634e5e5f1a5f71d7c8c18a9fb.png">
-          <% if current_user.id == @seller.id %><%= @seller.first_name %><% else %><%= @buyer.first_name %><% end %>
+          <% if current_user.id == @seller.id %><%= @buyer.first_name %><% else %><%= @seller.first_name %><% end %>
         </div>
       <% end %>
     </div>

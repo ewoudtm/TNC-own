@@ -21,7 +21,7 @@ class SinglebidsController < ApplicationController
   end
 
   def update
-    @singlebid = SingleBid.find(params[:id])
+    @singlebid = SingleBid.find(params[:productnegotiation_id])
     if @singlebid.update_attribute(:accepted, true)
       @singlebid.save
     end

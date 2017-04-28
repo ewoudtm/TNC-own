@@ -12,7 +12,6 @@ class SinglebidsController < ApplicationController
   def new
     @singlebid = SingleBid.new
 
-
   end
 
   def create
@@ -27,19 +26,34 @@ class SinglebidsController < ApplicationController
       redirect_to productnegotiation_path(params[:productnegotiation_id]), alert: "Minumum amount of the offer has to be at least 70% of the product price"
     elsif (bits.length <= 4)
       @newbid = SingleBid.create!(product_negotiation_id: params[:productnegotiation_id], price: params[:price], user_id: current_user.id)
-      redirect_to productnegotiation_path(params[:productnegotiation_id]), notice: "Offer created"
-    end
+      if @newbid.save
+        product_negotiation = ProductNegotiation.find(@newbid.product_negotiation_id)
+        buyer = User.find(product_negotiation.user.id)
+        seller = User.find(product_negotiation.product.user_id)
+        AuctionMailer.new_offer_email(buyer, product_negotiation, @newbid).deliver_now
+        AuctionMailer.new_offer_email(seller, product_negotiation, @newbid).deliver_now
+        redirect_to productnegotiation_path(params[:productnegotiation_id]), notice: "Offer created"
+      else
+        render :new
+      end
   end
 
   def update
     @singlebid = SingleBid.find(params[:productnegotiation_id])
     if @singlebid.update_attribute(:accepted, true)
-      @singlebid.save
+      if @singlebid.save
+        product_negotiation = ProductNegotiation.find(@singlebid.product_negotiation_id)
+        buyer = User.find(product_negotiation.user.id)
+        seller = User.find(product_negotiation.product.user_id)
+        AuctionMailer.accepted_offer_email(buyer, product_negotiation, @singlebid).deliver_now
+        AuctionMailer.accepted_offer_email(seller, product_negotiation, @singlebid).deliver_now
+      end
     end
     redirect_to productnegotiation_path, notice: 'You accepted the offer'
   end
 
   def destroy
   end
+
 
 end

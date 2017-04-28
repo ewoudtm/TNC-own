@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
     if @product.update_attribute(:sold, true)
       @product.save
     end
-     redirect_to users_path, notice: "Product Sold!"
+     redirect_to root_path, notice: "Product Sold!"
   end
 
   def toggle_accept_offer

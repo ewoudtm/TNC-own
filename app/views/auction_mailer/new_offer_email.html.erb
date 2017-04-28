@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hi <%= @user.first_name %> </h1>
+    <p>
+      You have a new offer of <%= @bid.price %> for <%= @product.title %>
+      <%= image_tag @product_negotiation.product.image %>
+    </p>
+  </body>
+</html>

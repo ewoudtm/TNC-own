@@ -65,3 +65,17 @@ div.navbar-header {
 del {
    padding-right: 10px;
 }
+
+p.notice {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: green;
+  margin-top: 20px;
+}
+
+p.alert {
+  color: red;
+  margin-top: 20px;
+}

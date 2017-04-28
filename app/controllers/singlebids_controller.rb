@@ -25,6 +25,7 @@ class SinglebidsController < ApplicationController
     if @singlebid.update_attribute(:accepted, true)
       @singlebid.save
     end
+    redirect_to productnegotiation_path, notice: 'You accepted the offer'
   end
 
   def destroy

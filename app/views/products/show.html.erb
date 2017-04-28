@@ -22,9 +22,11 @@
         <hr>
         <% if current_user.id == @product.user_id %>
           This is your product
-        <% else %>
+        <% elsif @product.accept_offers == true %>
           <%= link_to "IN SHOPPING BAG", product_path(@product.id), :class => "btn btn-danger btn-md" %>
           <%= link_to "DOE EEN BOD", new_productnegotiation_path(@product), :class => "btn btn-danger btn-md", "data-toggle" => "modal" %>
+        <% else %>
+          <%= link_to "IN SHOPPING BAG", product_path(@product.id), :class => "btn btn-danger btn-md" %>
         <% end %>
         <hr>
         <h6>MAAT: <%= @product.size %></h6>

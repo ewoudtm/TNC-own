@@ -1,9 +1,7 @@
 class SinglebidsController < ApplicationController
 
   def index
-
     @singlebids = SingleBid.all
-
   end
 
   def show
@@ -11,14 +9,12 @@ class SinglebidsController < ApplicationController
 
   def new
     @singlebid = SingleBid.new
-
   end
 
   def create
     bits = ProductNegotiation.find(params[:productnegotiation_id].to_i).single_bids
     min_price = 20
     seventy_percent_startprice = 0.7 * ProductNegotiation.find(params[:productnegotiation_id].to_i).product.start_price
-
 
     if (params[:price].to_i < min_price)
       redirect_to productnegotiation_path(params[:productnegotiation_id]), alert: "Minumum offer must be at least 20 euros"
@@ -36,6 +32,7 @@ class SinglebidsController < ApplicationController
       else
         render :new
       end
+    end
   end
 
   def update

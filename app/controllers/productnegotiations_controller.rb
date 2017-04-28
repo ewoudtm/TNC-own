@@ -28,7 +28,7 @@ class ProductnegotiationsController < ApplicationController
     @productnegotiation = ProductNegotiation.find(params[:id])
     @productnegotiation.update_attribute(:active, false)
 
-    redirect_to productnegotiations_path, notice: "Negotiation closed"
+    redirect_to productnegotiations_path, alert: "Negotiation closed"
   end
 
   def destroy
@@ -46,7 +46,7 @@ class ProductnegotiationsController < ApplicationController
 
     def authorize_buyer_seller
       # if current_user id is equal to Product owner or Product bidder, ok to continue, otherwise not.
-      redirect_to product_path, notice: "Sorry, you can't see other peoples negotiations" unless (current_user.id == @product_negotiation.user.id) || (current_user.id == @product_negotiation.product.user_id)
+      redirect_to product_path, alert: "Sorry, you can't see other peoples negotiations" unless (current_user.id == @product_negotiation.user.id) || (current_user.id == @product_negotiation.product.user_id)
     end
 
     def get_product_negotiations
@@ -59,14 +59,14 @@ class ProductnegotiationsController < ApplicationController
       found_negotiation = current_user.product_negotiations.find do |negotiation|
         negotiation.product_id == params[:format].to_i
       end
-      redirect_to productnegotiation_path(found_negotiation.id), notice: "You already have a negotiation for this product" unless found_negotiation == nil
+      redirect_to productnegotiation_path(found_negotiation.id), alert: "You already have a negotiation for this product" unless found_negotiation == nil
       @already_redirected = true unless found_negotiation == nil
     end
 
     def redirect_if_product_accept_offer_is_false
       product_id = params[:format].to_i
       if (Product.find(product_id).accept_offers === false)
-        redirect_to product_path(product_id), notice: "Sorry, the seller has set this product as not available for new biddings"
+        redirect_to product_path(product_id), alert: "Sorry, the seller has set this product as not available for new biddings"
         @already_redirected = true
       end
     end

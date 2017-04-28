@@ -10,9 +10,16 @@
         <div class="product-description-wrapper">
           <h5><%= link_to product.title, product_path(product.id) %></h5>
           <h6><%= link_to product.product_type, product_path(product.id)%></h6>
+
           <div class="pull-left"><%= product.size %></div>
-          <div class="pull-right"><del>€<%= product.original_price %></del>
-          €<%= product.start_price %></div>
+          <div class="pull-right">
+            <% if product.sold %>
+              <h4>Verkocht!</h4>
+            <% else %>
+              <del>€<%= product.original_price %></del>
+              €<%= product.start_price %>
+              <% end %>
+          </div>
         </div>
       </div>
     <% end %>

@@ -25,10 +25,6 @@
     </div>
   </div>
 </div>
-<% if @current_negotiation_bids.length > 2 %>
-   <h3>Maximum amount of bids reached!</h3>
-<% else %>
-<% end %>
 <% if @current_negotiation_bids.length != 0 %>
   <% time_remaining = (@end_time - Time.now).to_i %>
 <% else %>

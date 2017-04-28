@@ -17,12 +17,18 @@ class SinglebidsController < ApplicationController
 
   def create
     bits = ProductNegotiation.find(params[:productnegotiation_id].to_i).single_bids
+    min_price = 20
+    seventy_percent_startprice = 0.7 * ProductNegotiation.find(params[:productnegotiation_id].to_i).product.start_price
 
-    if (bits.length <= 4)
+
+    if (params[:price].to_i < min_price)
+      redirect_to productnegotiation_path(params[:productnegotiation_id]), alert: "Minumum offer must be at least 20 euros"
+    elsif (params[:price].to_i < seventy_percent_startprice)
+      redirect_to productnegotiation_path(params[:productnegotiation_id]), alert: "Minumum amount of the offer has to be at least 70% of the product price"
+    elsif (bits.length <= 4)
       @newbid = SingleBid.create!(product_negotiation_id: params[:productnegotiation_id], price: params[:price], user_id: current_user.id)
-       redirect_to productnegotiation_path(params[:productnegotiation_id])
-     end
-   else redirect_to productnegotiation_path(params[:productnegotiation_id]), notice: "Max amount of bids reached"
+      redirect_to productnegotiation_path(params[:productnegotiation_id]), notice: "Offer created"
+    end
   end
 
   def update

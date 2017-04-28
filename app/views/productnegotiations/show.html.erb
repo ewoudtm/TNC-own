@@ -63,13 +63,14 @@
             <%= link_to "Accept", productnegotiation_singlebid_path(@current_negotiation_bids.last.id, accepted: true), class: "btn btn-danger btn-md", method: :patch %>
         </div>
         <% if !!!@current_negotiation_bids.last.accepted %>
-        <%= form_tag productnegotiation_singlebids_path(@product_negotiation.id) do %>
-          <div class="col-xs-2">
-            <%= number_field_tag :price, 'quantity' %>
-          </div>
-          <div class="col-xs-2">
-            <%= submit_tag "Counter Offer", class: "btn btn-danger btn-md" %>
-          </div>
+          <%= form_tag productnegotiation_singlebids_path(@product_negotiation.id) do %>
+            <div class="col-xs-2">
+              <%= number_field_tag :price, 'quantity' %>
+            </div>
+            <div class="col-xs-2">
+              <%= submit_tag "Counter Offer", class: "btn btn-danger btn-md" %>
+            </div>
+          <% end %>  
         <% end %>
       <% end %>
     <% else %>

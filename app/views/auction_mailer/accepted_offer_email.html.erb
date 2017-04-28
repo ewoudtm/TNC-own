@@ -3,11 +3,35 @@
 <html>
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   </head>
-  <body>
+  <body style="margin:100px; font-family:'Montserrat'">
     <h1>Hi <%= @user.first_name %> </h1>
     <p>
-      The offer of has been accepted.
+      The offer of €<%= @bid.price %> for <%= @product.title %> has been accepted.
+      You have 24 hours to finalize your purchase.
+
+      regards,
+      The Next Closet
     </p>
+    <h4>Product details</h4>
+    <table style="width:300px">
+      <tbody>
+        <tr>
+          <th style="height:200px ">
+            <%= image_tag @product.image %>
+          </th>
+        </tr>
+        <tr>
+          <th style="text-align:left">
+            <h4><%= @product.title %></h4>
+            <h5><%= @product.product_type %></h5>
+            <h6>MAAT: <%= @product.size %></h6>
+            <h6>OMSCHRIJVING:</h6>
+            <p><%= @product.description %></p>
+          </th>
+        </tr>
+      </tbody>
+    </table>
   </body>
 </html>

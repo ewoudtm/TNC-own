@@ -1,9 +1,7 @@
 class SinglebidsController < ApplicationController
 
   def index
-
     @singlebids = SingleBid.all
-
   end
 
   def show
@@ -11,7 +9,6 @@ class SinglebidsController < ApplicationController
 
   def new
     @singlebid = SingleBid.new
-
   end
 
   def create
@@ -54,6 +51,4 @@ class SinglebidsController < ApplicationController
 
   def destroy
   end
-
-
 end

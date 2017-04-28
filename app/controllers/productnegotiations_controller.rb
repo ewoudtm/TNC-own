@@ -78,7 +78,9 @@ class ProductnegotiationsController < ApplicationController
 
     def end_time
       current_negotiation_bids = ProductNegotiation.get_bids_from_current_negotiation(@single_bids, params)
-      last_bid = current_negotiation_bids.last
-      @end_time = last_bid.created_at + 2.days
+      if current_negotiation_bids.length != 0
+        last_bid = current_negotiation_bids.last
+        @end_time = last_bid.created_at + 2.days
+      end
     end
 end

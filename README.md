@@ -6,6 +6,11 @@ This project was a final assignment for four students of the 7th batch (March/Ap
 
 This Rails application was made in 4,5 days and was set up from scratch (no code base was provided) and the following requirements:
 
+## Team
+The team that worked on this are
+[Dennis van Essen](https://github.com/Dvessen83), [Ewoud Wiering](https://github.com/ewoudtm), Michael Awad and [Bas Winkel](https://github.com/Winkeltje84).
+
+## Requirements
 Basic Requirements:
 - Seller can decide per product if offers are accepted for that item.
 - Buyer can make only a price offer (so no text, just number).

@@ -13,13 +13,13 @@ The team that worked on this are
 ## ScreenShots
 
 - Home screen The Next Closet
-[![](https://github.com/Winkeltje84/bidding-heroes/blob/Readme/app/assets/images/screenshots/ScreenShot-home.png?raw=true)](/assets/images/screenshots/screenshot-home.png?raw=true)
+[![](https://github.com/Winkeltje84/bidding-heroes/blob/master/app/assets/images/screenshots/ScreenShot-home.png?raw=true)](/assets/images/screenshots/screenshot-home.png?raw=true)
 
 - Negotiation screenshots of two customers (one offering / one bidding)
-[![](https://github.com/Winkeltje84/bidding-heroes/blob/Readme/app/assets/images/screenshots/ScreenShot-negotiation.png?raw=true)](/assets/images/screenshots/screenshot-negotiation.png?raw=true)
+[![](https://github.com/Winkeltje84/bidding-heroes/blob/master/app/assets/images/screenshots/ScreenShot-negotiation.png?raw=true)](/assets/images/screenshots/screenshot-negotiation.png?raw=true)
 
-- Screen shot of negotiation overviews (both product owner & person bidding) 
-[![](https://github.com/Winkeltje84/bidding-heroes/blob/Readme/app/assets/images/screenshots/ScreenShot-overviews.png?raw=true)](/assets/images/screenshots/screenshot-overviews.png?raw=true)
+- Screen shot of negotiation overviews (both product owner & person bidding)
+[![](https://github.com/Winkeltje84/bidding-heroes/blob/master/app/assets/images/screenshots/ScreenShot-overviews.png?raw=true)](/assets/images/screenshots/screenshot-overviews.png?raw=true)
 
 ## Requirements
 Basic Requirements:

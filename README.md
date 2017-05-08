@@ -4,11 +4,17 @@
 ## About
 This project was a final assignment for four students of the 7th batch (March/April) of Codaisseur's Academy. This first real-life project was to add a bidding feature for the website of [The Next Closet](https://thenextcloset.com/).
 
-This Rails application was made in 4,5 days and was set up from scratch (no code base was provided) and the following requirements:
+This Rails application was made in 4,5 days and was set up from scratch (no code base was provided).
 
 ## Team
 The team that worked on this are
 [Dennis van Essen](https://github.com/Dvessen83), [Ewoud Wiering](https://github.com/ewoudtm), Michael Awad and [Bas Winkel](https://github.com/Winkeltje84).
+
+## ScreenShots
+
+[![](https://github.com/Winkeltje84/bidding-heroes/blob/readme/app/assets/images/screenshots/screenshot-home.png?raw=true)](/assets/images/screenshots/screenshot-home.png?raw=true)
+[![](https://github.com/Winkeltje84/bidding-heroes/blob/readme/app/assets/images/screenshots/screenshot-negotiation.png?raw=true)](/assets/images/screenshots/screenshot-negotiation.png?raw=true)
+[![](https://github.com/Winkeltje84/bidding-heroes/blob/readme/app/assets/images/screenshots/screenshot-overviews.png?raw=true)](/assets/images/screenshots/screenshot-overviews.png?raw=true)
 
 ## Requirements
 Basic Requirements:

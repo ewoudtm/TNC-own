@@ -21,9 +21,9 @@ Basic Requirements:
 - Seller will receive an email notification that an offer has been made.
 - Seller (and buyer) can accept, decline or make a counter offer.
 - Offer is time bounded.
- Seller needs to responded within 48 hours on an (counter) offer.
- Buyer needs to responded within 48 hours on a counter offer.
- If seller and buyer come to an agreement the buyer has 24 hours to purchase the item for that specific price, else the offer expires.
+* Seller needs to responded within 48 hours on an (counter) offer.
+* Buyer needs to responded within 48 hours on a counter offer.
+* If seller and buyer come to an agreement the buyer has 24 hours to purchase the item for that specific price, else the offer expires.
 - Seller and buyer can only make 3 times an offer, then they are blocked for making offers for this item (so they should be realistic in their offers and need to accept at some point).
 - If they agreed on price, the price is automatically adjusted for this specific buyer.
 - Only this buyer can purchase item for the offer price, other users see the normal price.

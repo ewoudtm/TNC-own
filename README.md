@@ -12,7 +12,7 @@ The team that worked on this are
 
 ## ScreenShots
 
-[![](https://github.com/Winkeltje84/bidding-heroes/blob/readme/app/assets/images/screenshots/screenshot-home.png?raw=true)](/assets/images/screenshots/screenshot-home.png?raw=true)
+[![](https://github.com/Winkeltje84/bidding-heroes/blob/readme/app/assets/images/screenshots/ScreenShot-home.png?raw=true)](/assets/images/screenshots/ScreenShot-home.png?raw=true)
 [![](https://github.com/Winkeltje84/bidding-heroes/blob/readme/app/assets/images/screenshots/screenshot-negotiation.png?raw=true)](/assets/images/screenshots/screenshot-negotiation.png?raw=true)
 [![](https://github.com/Winkeltje84/bidding-heroes/blob/readme/app/assets/images/screenshots/screenshot-overviews.png?raw=true)](/assets/images/screenshots/screenshot-overviews.png?raw=true)
 [![](https://github.com/Winkeltje84/toc_bears/blob/readme/app/assets/images/screenshots/toc1.jpeg?raw=true)](/assets/images/screenshots/toc1.jpeg?raw=true)

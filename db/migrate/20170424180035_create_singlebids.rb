@@ -1,10 +1,10 @@
 class CreateSinglebids < ActiveRecord::Migration[5.0]
   def change
-    create_table :singlebids do |t|
+    create_table :single_bids do |t|
       t.integer :price
       t.boolean :counter_offer
       t.boolean :accepted, default: false
-      t.references :product_negotiations, foreign_key: true
+      t.references :prod_negs, foreign_key: true
 
 
       t.timestamps

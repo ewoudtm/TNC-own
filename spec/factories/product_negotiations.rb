@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :product_negotiation do
+  factory :prod_neg do
     product { build (:product) }
     # single_bids { build (:single_bid) }
     active false

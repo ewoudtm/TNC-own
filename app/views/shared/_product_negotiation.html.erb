@@ -3,10 +3,10 @@
 
   <div class="panel-body">
     test 2
-    <h2><%= @product_negotiation.product.title %></h2>
-    <%= image_tag @product_negotiation.product.image %>
-    <h4>Starting price: € <%= @product_negotiation.product.start_price %>,00</h4>
-    <p>Negotiation state: <%= @product_negotiation.active == true ? "Active" : "Inactive" %></p>
+    <h2><%= @prod_neg.product.title %></h2>
+    <%= image_tag @prod_neg.product.image %>
+    <h4>Starting price: € <%= @prod_neg.product.start_price %>,00</h4>
+    <p>Negotiation state: <%= @prod_neg.active == true ? "Active" : "Inactive" %></p>
 
     <h2>Offers and Counter offers</h2>
     <hr>
@@ -20,7 +20,7 @@
         </tr>
       </thead>
       <tbody>
-        <!-- <% @product_negotiation.single_bids.each do |bid| %>
+        <!-- <% @prod_neg.single_bids.each do |bid| %>
           <% if bid != nil %>
             <% user_id = bid.user_id %>
             <% user = @users.select{|user| user[:id] == user_id} %>

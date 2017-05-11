@@ -8,7 +8,7 @@
   </div>
   <div class="col-xs-12 products-container">
     <% current_user.products.each do |product| %>
-      <% product.product_negotiations.each do |pn| %>
+      <% product.prod_negs.each do |pn| %>
         <div class="product-wrapper">
           <div class="product-image">
             <%= image_tag pn.product.image %>
@@ -22,7 +22,7 @@
               <%= link_to user_product_toggle_accept_offer_path(current_user.id, pn.product.id), :class => "btn btn-danger btn-md", "data-toggle" => "modal", method: :put do %>Unavailable for offers<% end %>
             <%end%>
             <% if  pn.single_bids.first != nil %>
-              <%= link_to "Current Offer of #{pn.user.first_name}", productnegotiation_path(pn.id), :class => "btn btn-success btn-md" %>
+              <%= link_to "Current Offer of #{pn.user.first_name}", prod_neg_path(pn.id), :class => "btn btn-success btn-md" %>
             <% end %>
           </div>
         </div>

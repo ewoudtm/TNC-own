@@ -13,7 +13,7 @@
         <li><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>sinds 20-4</li>
         <li><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>115x bekeken</li>
         <li><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>4x op verlanglijstje</li>
-        <li><span class="glyphicon glyphicon-hand-up" aria-hidden="true"></span><%= @product.product_negotiations.length %>x op geboden</li>
+        <li><span class="glyphicon glyphicon-hand-up" aria-hidden="true"></span><%= @product.prod_negs.length %>x op geboden</li>
       </ul>
     </div>
     <div class="row">
@@ -24,7 +24,7 @@
           This is your product
         <% elsif @product.accept_offers == true %>
           <%= link_to "IN SHOPPING BAG", product_path(@product.id), :class => "btn btn-danger btn-md" %>
-          <%= link_to "DOE EEN BOD", new_productnegotiation_path(@product), :class => "btn btn-danger btn-md", "data-toggle" => "modal" %>
+          <%= link_to "DOE EEN BOD", new_prod_neg_path(@product), :class => "btn btn-danger btn-md", "data-toggle" => "modal" %>
         <% else %>
           <%= link_to "IN SHOPPING BAG", product_path(@product.id), :class => "btn btn-danger btn-md" %>
         <% end %>

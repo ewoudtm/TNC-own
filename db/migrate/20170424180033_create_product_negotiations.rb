@@ -1,6 +1,6 @@
-class CreateProductNegotiations < ActiveRecord::Migration[5.0]
+class CreateProdNegs < ActiveRecord::Migration[5.0]
   def change
-    create_table :product_negotiations do |t|
+    create_table :prod_negs do |t|
       t.references :products, foreign_key: true
       t.references :users, foreign_key: true
       t.text :single_bids, array: true, default: []

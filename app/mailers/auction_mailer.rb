@@ -1,26 +1,26 @@
 class AuctionMailer < ApplicationMailer
 
-  def sample_email(user, product_negotiation, bid)
+  def sample_email(user, prod_neg, bid)
     @user = user
-    @product_negotiation = product_negotiation
+    @prod_neg = prod_neg
     @bid = bid
-    @product = Product.find(@product_negotiation.product_id)
+    @product = Product.find(@prod_neg.product_id)
     mail(to: @user.email, subject: 'Sample Email')
   end
 
-  def new_offer_email(user, product_negotiation, bid)
+  def new_offer_email(user, prod_neg, bid)
     @user = user
-    @product_negotiation = product_negotiation
+    @prod_neg = prod_neg
     @bid = bid
-    @product = Product.find(@product_negotiation.product_id)
+    @product = Product.find(@prod_neg.product_id)
     mail(to: @user.email, subject: 'New Offer')
   end
 
-  def accepted_offer_email(user, product_negotiation, bid)
+  def accepted_offer_email(user, prod_neg, bid)
     @user = user
-    @product_negotiation = product_negotiation
+    @prod_neg = prod_neg
     @bid = bid
-    @product = Product.find(@product_negotiation.product_id)
+    @product = Product.find(@prod_neg.product_id)
     mail(to: @user.email, subject: 'Offer Accepted!')
   end
 

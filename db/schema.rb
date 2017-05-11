@@ -15,15 +15,15 @@ ActiveRecord::Schema.define(version: 20170426201249) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "product_negotiations", force: :cascade do |t|
+  create_table "prod_negs", force: :cascade do |t|
     t.text     "single_bids", default: [],                array: true
     t.boolean  "active",      default: true
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.integer  "product_id"
     t.integer  "user_id"
-    t.index ["product_id"], name: "index_product_negotiations_on_product_id", using: :btree
-    t.index ["user_id"], name: "index_product_negotiations_on_user_id", using: :btree
+    t.index ["product_id"], name: "index_prod_negs_on_product_id", using: :btree
+    t.index ["user_id"], name: "index_prod_negs_on_user_id", using: :btree
   end
 
   create_table "products", force: :cascade do |t|
@@ -44,13 +44,13 @@ ActiveRecord::Schema.define(version: 20170426201249) do
   end
 
   create_table "single_bids", force: :cascade do |t|
-    t.integer  "product_negotiation_id"
+    t.integer  "prod_neg_id"
     t.integer  "price"
     t.boolean  "accepted",               default: false
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.integer  "user_id"
-    t.index ["product_negotiation_id"], name: "index_single_bids_on_product_negotiation_id", using: :btree
+    t.index ["prod_neg_id"], name: "index_single_bids_on_prod_neg_id", using: :btree
     t.index ["user_id"], name: "index_single_bids_on_user_id", using: :btree
   end
 
@@ -73,9 +73,9 @@ ActiveRecord::Schema.define(version: 20170426201249) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
-  add_foreign_key "product_negotiations", "products"
-  add_foreign_key "product_negotiations", "users"
+  add_foreign_key "prod_negs", "products"
+  add_foreign_key "prod_negs", "users"
   add_foreign_key "products", "users"
-  add_foreign_key "single_bids", "product_negotiations"
+  add_foreign_key "single_bids", "prod_negs"
   add_foreign_key "single_bids", "users"
 end

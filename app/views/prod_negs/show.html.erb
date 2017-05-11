@@ -2,26 +2,26 @@
   <div class="col-xs-8">
     <div class="product-show-top">
       <h2 class="bottom-spacer">NEGOTIATIONS with <%= @seller.first_name %> and <%= @buyer.first_name %></h2>
-      <h4><%= @product_negotiation.product.title %></h4>
-      <h5><%= @product_negotiation.product.product_type %></h5>
+      <h4><%= @prod_neg.product.title %></h4>
+      <h5><%= @prod_neg.product.product_type %></h5>
     </div>
     <div class="product-show-top">
-      <h6>MAAT: <%= @product_negotiation.product.size %></h6>
+      <h6>MAAT: <%= @prod_neg.product.size %></h6>
       <h6>OMSCHRIJVING:</h6>
-      <p><%= @product_negotiation.product.description %></p>
+      <p><%= @prod_neg.product.description %></p>
     </div>
     <div class="row">
       <div class="col-xs-2">
-        <h4><del>€<%= @product_negotiation.product.original_price %></del></h4>
+        <h4><del>€<%= @prod_neg.product.original_price %></del></h4>
       </div>
       <div class="col-xs-2">
-        <h4>€<%= @product_negotiation.product.start_price %></h4>
+        <h4>€<%= @prod_neg.product.start_price %></h4>
       </div>
     </div>
   </div>
   <div class="col-xs-4">
     <div class="product-image">
-      <%= image_tag @product_negotiation.product.image %>
+      <%= image_tag @prod_neg.product.image %>
     </div>
   </div>
 </div>
@@ -30,7 +30,7 @@
 <% else %>
   <% time_remaining = 1 %>
 <% end %>
-<% if !!!@product_negotiation.active || time_remaining <= 0 %>
+<% if !!!@prod_neg.active || time_remaining <= 0 %>
  <h3>This negotiation is closed</h3>
 <% else %>
   <div class="row current-bid bottom-spacer">
@@ -43,7 +43,7 @@
       </div>
 
       <div class="col-xs-1">
-        <% if current_user == @product_negotiation.product.user %>
+        <% if current_user == @prod_neg.product.user %>
           <% if @current_negotiation_bids.last.accepted == true %>
             <button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#myModal">
               Finalize
@@ -52,14 +52,14 @@
         <% end %>
       </div>
       <div class="col-xs-2">
-        <%= link_to "Cancel Negotiation", productnegotiation_path(@product_negotiation.id), class: "btn btn-danger btn-md", method: :patch %>
+        <%= link_to "Cancel Negotiation", prod_neg_path(@prod_neg.id), class: "btn btn-danger btn-md", method: :patch %>
       </div>
       <% if current_user.id != @current_negotiation_bids.last.user_id %>
         <div class="col-xs-1">
-            <%= link_to "Accept", productnegotiation_singlebid_path(@current_negotiation_bids.last.id, accepted: true), class: "btn btn-success btn-md", method: :patch %>
+            <%= link_to "Accept", prod_neg_single_bid_path(@current_negotiation_bids.last.id, accepted: true), class: "btn btn-success btn-md", method: :patch %>
         </div>
         <% if !!!@current_negotiation_bids.last.accepted %>
-          <%= form_tag productnegotiation_singlebids_path(@product_negotiation.id) do %>
+          <%= form_tag prod_neg_single_bids_path(@prod_neg.id) do %>
             <div class="col-xs-2">
               <%= number_field_tag :price, 'quantity' %>
             </div>
@@ -71,7 +71,7 @@
       <% end %>
     <% else %>
       <h4>There are no bids yet</h4>
-      <%= form_tag productnegotiation_singlebids_path(@product_negotiation.id) do %>
+      <%= form_tag prod_neg_single_bids_path(@prod_neg.id) do %>
       <%= number_field_tag :price, 'quantity' %>
       <%= submit_tag "Make Offer", class: "btn btn-danger btn-md" %>
       <% end %>

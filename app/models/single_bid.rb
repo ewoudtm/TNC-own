@@ -1,4 +1,4 @@
 class SingleBid < ApplicationRecord
-  belongs_to :product_negotiation
+  belongs_to :prod_neg
 
 end

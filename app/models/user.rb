@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :products
-  has_many :product_negotiations
+  has_many :prod_negs
 end

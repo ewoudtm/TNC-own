@@ -1,5 +1,5 @@
 class DropTable < ActiveRecord::Migration[5.0]
   def up
-    drop_table :singlebids
+    drop_table :single_bids
   end
 end

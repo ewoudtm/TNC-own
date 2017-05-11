@@ -1,5 +1,5 @@
 SingleBid.delete_all
-ProductNegotiation.delete_all
+ProdNeg.delete_all
 Product.delete_all
 User.delete_all
 
@@ -186,43 +186,43 @@ product13 = Product.create(
 
 
 # product_negotations
-product_negotiation1 = ProductNegotiation.create!(
+prod_neg1 = ProdNeg.create!(
   single_bids: [],
   active: true,
   product_id: product1.id,
   user_id: user2.id
 )
-product_negotiation2 = ProductNegotiation.create!(
+prod_neg2 = ProdNeg.create!(
   single_bids: [],
   active: true,
   product_id: product2.id,
   user_id: user1.id
 )
-product_negotiation3 = ProductNegotiation.create!(
+prod_neg3 = ProdNeg.create!(
   single_bids: [],
   active: true,
   product_id: product3.id,
   user_id: user2.id
 )
-product_negotiation4 = ProductNegotiation.create!(
+prod_neg4 = ProdNeg.create!(
   single_bids: [],
   active: true,
   product_id: product1.id,
   user_id: user3.id
 )
-product_negotiation5 = ProductNegotiation.create!(
+prod_neg5 = ProdNeg.create!(
   single_bids: [],
   active: true,
   product_id: product6.id,
   user_id: user2.id
 )
-product_negotiation6 = ProductNegotiation.create!(
+prod_neg6 = ProdNeg.create!(
   single_bids: [],
   active: true,
   product_id: product8.id,
   user_id: user1.id
 )
-product_negotiation7 = ProductNegotiation.create!(
+prod_neg7 = ProdNeg.create!(
   single_bids: [],
   active: false,
   product_id: product2.id,
@@ -233,79 +233,79 @@ product_negotiation7 = ProductNegotiation.create!(
 
 # single bids
 single_bid1 = SingleBid.create!(
-  product_negotiation_id: product_negotiation1.id,
+  prod_neg_id: prod_neg1.id,
   price: 820,
   accepted: false,
   user_id: user2.id,
 )
 single_bid2 = SingleBid.create!(
-  product_negotiation_id: product_negotiation1.id,
+  prod_neg_id: prod_neg1.id,
   price: 880,
   accepted: false,
   user_id: user1.id,
 )
 single_bid3 = SingleBid.create!(
-  product_negotiation_id: product_negotiation1.id,
+  prod_neg_id: prod_neg1.id,
   price: 850,
   accepted: false,
   user_id: user2.id,
 )
 single_bid4 = SingleBid.create!(
-  product_negotiation_id: product_negotiation2.id,
+  prod_neg_id: prod_neg2.id,
   price: 75,
   accepted: false,
   user_id: user1.id,
 )
 single_bid5 = SingleBid.create!(
-  product_negotiation_id: product_negotiation3.id,
+  prod_neg_id: prod_neg3.id,
   price: 40,
   accepted: false,
   user_id: user3.id,
 )
 single_bid6 = SingleBid.create!(
-  product_negotiation_id: product_negotiation3.id,
+  prod_neg_id: prod_neg3.id,
   price: 50,
   accepted: false,
   user_id: user1.id,
 )
 single_bid7 = SingleBid.create!(
-  product_negotiation_id: product_negotiation4.id,
+  prod_neg_id: prod_neg4.id,
   price: 830,
   accepted: false,
   user_id: user3.id,
 )
 single_bid8 = SingleBid.create!(
-  product_negotiation_id: product_negotiation4.id,
+  prod_neg_id: prod_neg4.id,
   price: 875,
   accepted: false,
   user_id: user1.id,
 )
 single_bid9 = SingleBid.create!(
-  product_negotiation_id: product_negotiation5.id,
+  prod_neg_id: prod_neg5.id,
   price: 250,
   accepted: false,
   user_id: user2.id,
 )
 single_bid10 = SingleBid.create!(
-  product_negotiation_id: product_negotiation5.id,
+  prod_neg_id: prod_neg5.id,
   price: 275,
   accepted: false,
   user_id: user3.id,
 )
 single_bid11 = SingleBid.create!(
-  product_negotiation_id: product_negotiation6.id,
+  prod_neg_id: prod_neg6.id,
   price: 25,
   accepted: false,
   user_id: user1.id,
 )
 single_bid12 = SingleBid.create!(
-  product_negotiation_id: product_negotiation6.id,
+  prod_neg_id: prod_neg6.id,
   price: 35,
   accepted: false,
   user_id: user3.id,
 )
 single_bid13 = SingleBid.create!(
-  product_negotiation_id: product_negotiation7.id,
+  prod_neg_id: prod_neg7.id,
   price: 15,
   accepted: false,
   user_id: user3.id,

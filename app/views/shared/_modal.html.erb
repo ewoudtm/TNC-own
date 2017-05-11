@@ -11,13 +11,13 @@
           <div class="col-xs-8">
             <div class="product-show-top">
 
-              <h4><%= @product_negotiation.product.title %></h4>
-              <h5><%= @product_negotiation.product.product_type %></h5>
+              <h4><%= @prod_neg.product.title %></h4>
+              <h5><%= @prod_neg.product.product_type %></h5>
             </div>
             <div class="product-show-top">
-              <h6>MAAT: <%= @product_negotiation.product.size %></h6>
+              <h6>MAAT: <%= @prod_neg.product.size %></h6>
               <h6>OMSCHRIJVING:</h6>
-              <p><%= @product_negotiation.product.description %></p>
+              <p><%= @prod_neg.product.description %></p>
             </div>
             <div class="row">
               <div class="col-xs-8">
@@ -27,12 +27,12 @@
           </div>
           <div class="col-xs-4">
             <div class="product-image">
-              <%= image_tag @product_negotiation.product.image %>
+              <%= image_tag @prod_neg.product.image %>
             </div>
           </div
       </div>
       <div class="modal-footer">
-        <%= link_to "Finalize", product_path(@product_negotiation.product.id, sold: true), class: "btn btn-success btn-md", method: :patch %>
+        <%= link_to "Finalize", product_path(@prod_neg.product.id, sold: true), class: "btn btn-success btn-md", method: :patch %>
       </div>
     </div>
   </div>

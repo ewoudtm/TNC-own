@@ -1,21 +1,18 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :update, :destroy]
-  before_action :set_products
-  before_action :set_product_negotiation, only: [:show]
+  before_action :set_product, only: [:show, :update, :index]
+  before_action :set_products, only: [:show]
+  before_action :set_prod_neg, only: [:show]
 
   def index
-    @products = Product.all
   end
 
   def show
-    @product = Product.find(params[:id])
   end
 
   def create
   end
 
   def update
-    @product = Product.find(params[:id])
     if @product.update_attribute(:sold, true)
       @product.save
     end
@@ -31,25 +28,25 @@ class ProductsController < ApplicationController
   end
 
   private
-  def set_product
-    @product = Product.find(params[:id])
-  end
-
-  def set_products
-      @products = Product.all
-  end
-
-  def set_product_negotiation
-      @product_negotiation = @product.product_negotiations.find do |pn|
-      pn.user_id == current_user.id
+    def set_product
+      @product = Product.find(params[:id])
     end
-  end
 
-  def change_accept_offer_boolean(product)
-    new_state = !product.accept_offers
-    product.update_attributes(accept_offers: new_state)
-    product.save
-    redirect_to users_path
-  end
+    def set_products
+        @products = Product.all
+    end
+
+    def set_prod_neg
+        @prod_neg = @product.prod_negs.find do |pn|
+        pn.user_id == current_user.id
+      end
+    end
+
+    def change_accept_offer_boolean(product)
+      new_state = !product.accept_offers
+      product.update_attributes(accept_offers: new_state)
+      product.save
+      redirect_to users_path
+    end
 
 end
